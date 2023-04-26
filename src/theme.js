@@ -24,4 +24,4 @@ export const theme = {
     creditsSmall: "736px",
     mobile: "450px",
   },
-}
+};

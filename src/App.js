@@ -1,15 +1,17 @@
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
 import { Container } from "./common/Container/styled";
-import { Navigation } from "./common/Navigation";
+import { GlobalStyle } from "./GlobalStyle";
+import { Normalize } from "styled-normalize";
 
 function App() {
   return (
-    <>
-      <Navigation>
-      </Navigation>
-      <Container>
-      </Container>
-    </>
+    <ThemeProvider theme={theme}>
+      <Normalize />
+      <GlobalStyle />
+      <Container>Hello World!</Container>
+    </ThemeProvider>
   );
-};
+}
 
 export default App;
