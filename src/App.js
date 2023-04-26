@@ -1,4 +1,4 @@
-import { Container } from "./Container";
+import { Container } from "./common/Container";
 
 function App() {
   return <Container>Hello World!</Container>;
