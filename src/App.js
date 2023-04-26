@@ -1,4 +1,4 @@
-import { Container } from "./Container";
+import { Container } from "./common/Container/styled";
 import { Navigation } from "./common/Navigation";
 
 function App() {
