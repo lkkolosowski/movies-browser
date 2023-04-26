@@ -1,6 +1,5 @@
 import { Wrapper, MovieBrowser, Title, Navi, NaviLi, Input} from "./styled";
 import { ReactComponent as Video } from '../../ImagesSVG/Video.svg';
-import { ReactComponent as Ellipse } from '../../ImagesSVG/Ellipse.svg';
 
 export const Navigation = () => (
     <Wrapper>
@@ -26,3 +25,5 @@ export const Navigation = () => (
         
     </Wrapper >
 );
+
+export default Navigation;
