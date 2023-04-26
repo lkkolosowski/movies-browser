@@ -11,6 +11,7 @@ export const theme = {
     waterloo: "#7E839A",
     woodsmoke: "#18181B",
     black: "#000000",
+    woodsmoke: "#18181B",
   },
 
   breakpoint: {
