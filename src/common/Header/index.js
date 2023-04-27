@@ -1,11 +1,11 @@
 import { Wrapper, MovieBrowser, Title, Navi, NaviLi, Input, StyledNavLink } from "./styled";
 import { ReactComponent as Video } from '../../ImagesSVG/Video.svg';
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
-import MoviesListPage from "../../feauters/Movies/MoviesListPage";
-import PeopleListPage from "../../feauters/People/PeopleListPage";
+import { HashRouter, Route, Switch } from "react-router-dom";
+import MoviesList from "../../features/MoviesList";
+import PeopleList from "../../features/PeopleList";
 
 
-export const Header = () => (
+const Header = () => (
     <HashRouter>
         <Wrapper>
             <MovieBrowser>
@@ -30,13 +30,13 @@ export const Header = () => (
         </Wrapper >
         <Switch>
             <Route path="/movies">
-                <MoviesListPage />
+                <MoviesList />
             </Route>
             <Route path="/people">
-                <PeopleListPage />
+                <PeopleList />
             </Route>
             <Route path="/">
-                <MoviesListPage />
+                <MoviesList />
             </Route>
         </Switch>
     </HashRouter>
