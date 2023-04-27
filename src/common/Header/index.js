@@ -1,8 +1,8 @@
 import { Wrapper, MovieBrowser, Title, Navi, NaviLi, Input, StyledNavLink } from "./styled";
 import { ReactComponent as Video } from '../../ImagesSVG/Video.svg';
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
-import MoviesListPage from "../../feauters/Movies/MoviesListPage";
-import PeopleListPage from "../../feauters/People/PeopleListPage";
+import { HashRouter, Route, Switch } from "react-router-dom";
+import MoviesListPage from "../../features/Movies/MoviesListPage";
+import PeopleListPage from "../../features/People/PeopleListPage";
 
 
 export const Header = () => (
