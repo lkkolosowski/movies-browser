@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.div`
     background-color: ${({theme}) => theme.color.woodsmoke};
@@ -50,4 +51,9 @@ export const Input = styled.input`
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+    text-decoration: none;
+    color: ${({ theme }) => theme.color.white};
 `;
