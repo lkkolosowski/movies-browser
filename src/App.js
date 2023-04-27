@@ -1,12 +1,12 @@
 import { Container } from "./common/Container/styled";
-import Navigation from "./common/Navigation";
+import Header from "./common/Header";
 
 function App() {
   return (
     <>
-      <Navigation>
+      <Header>
 
-      </Navigation>
+      </Header>
       <Container>
 
       </Container>;
