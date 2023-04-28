@@ -1,14 +1,20 @@
-import Tile from "./Tile";
-import { StyledTiles } from "./styled";
+import { Genres } from "./Genres";
+import { MovieImage } from "./Images";
+import { Rating } from "./Rating";
+import { Info, Tile, Title, Year } from "./styled";
 
-const Tiles = ({ movies }) => (
-  <StyledTiles>
-    {movies.map((movie) => (
-      <li key={movie.id}>
-        <Tile src={movie.poster_path} title={movie.title} year={movie.release_date.split("-")[0]} />
-      </li>
-    ))}
-  </StyledTiles>
+export const MovieTile = ({ posterPath, title, year }) => (
+  <Tile>
+    <MovieImage posterPath={posterPath} />
+    <Info>
+      <div>
+        <Title>{title}</Title>
+        <Year>{year}</Year>
+        <Genres />
+      </div>
+      <div>
+        <Rating />
+      </div>
+    </Info>
+  </Tile>
 );
-
-export default Tiles;
