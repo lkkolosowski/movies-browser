@@ -4,7 +4,7 @@ export const theme = {
     white: "#ffffff",
     pattensBlue: "#D6E4FF",
     scienceBlue: "#0044CC",
-    mystic: "E4E6F0",
+    mystic: "#E4E6F0",
     mercury: "#E5E5E5",
     lynch: "#627489",
     snuff: "#DDDDEE",
@@ -16,13 +16,9 @@ export const theme = {
   },
 
   breakpoint: {
-    full: "1400px",
-    moviesMedium: "1360px",
-    creditMedium: "1160px",
-    medium: "1200px",
-    creditsMediumSmaller: "1052px",
-    small: "784px",
-    creditsSmall: "736px",
-    mobile: "450px",
+    large: "1200px",
+    medium: "992px",
+    small: "767px",
+    mobile: "550px",
   },
 };
