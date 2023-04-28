@@ -1,59 +1,103 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { ReactComponent as VideoIcon } from "../../images/video.svg";
+import { ReactComponent as LoupeIcon } from "../../images/loupe.svg";
 
-export const Wrapper = styled.div`
-    background-color: ${({theme}) => theme.color.woodsmoke};
-    color: ${({theme}) => theme.color.white};
-    width: 100%;
-    display: flex;
-    align-items: center;
+export const Wrapper = styled.header`
+  background-color: ${({ theme }) => theme.color.woodsmoke};
+  color: ${({ theme }) => theme.color.white};
+`;
+
+export const StyledHeader = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    flex-direction: column;
+    padding: 24px 16px 16px;
+    gap: 24px;
+  }
 `;
 
 export const MovieBrowser = styled.div`
-    padding-left: 293px;
-    padding-top: 23px;
-    padding-bottom: 23px;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 `;
 
 export const Title = styled.span`
-    margin-left: 12px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
+  margin-left: 12px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    font-size: 13px;
+    margin-left: 8px;
+  }
 `;
 
-export const Navi = styled.ul`
-    display: flex;
-    list-style: none;
-    padding-left: 104px;
+export const HeaderButtons = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    gap: 20px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    justify-content: space-between;
+    gap: 10px;
+  }
 `;
-
-export const NaviLi = styled.li`
-    display: inline;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 0 64px;
-`;
-
-
 
 export const Input = styled.input`
-    border: 1px solid #E4E6F0;
-    border-radius: 33px;
-    margin-right: 292px;
-    margin-left: 200px;
-    display: flex;
-    flex-basis: 432px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
+  border: 1px solid ${({ theme }) => theme.color.mystic};
+  border-radius: 33px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 12px 23px 12px 51px;
+  width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    padding: 12px 23px 12px 31px;
+    font-size: 13px;
+  }
 `;
 
-export const StyledNavLink = styled(NavLink)`
-    text-decoration: none;
-    color: ${({ theme }) => theme.color.white};
+export const Search = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 432px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    max-width: none;
+  }
+`;
+
+export const Video = styled(VideoIcon)`
+  width: 40px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    width: 16px;
+  }
+`;
+
+export const Loupe = styled(LoupeIcon)`
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  pointer-events: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    left: 12px;
+  }
 `;
