@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { selectPopularMovies, selectStatus } from "../popularMoviesSlice";
-import { Container } from "../../common/Container/styled";
-import { Title } from "./styled";
-import Tiles from "../../common/Tiles";
+import { MainWrapper } from "../../common/MainWrapper";
+import { MovieTile } from "../../common/Tiles";
+import { Wrapper } from "./styled";
 
 const MoviesList = () => {
   const movies = useSelector(selectPopularMovies);
@@ -12,10 +12,22 @@ const MoviesList = () => {
     return <p>{status}</p>;
   }
   return (
-    <Container>
-      <Title>Popular Movies</Title>
-      <Tiles movies={movies} />
-    </Container>
+    <MainWrapper
+    title="Popular Movies"
+      content={
+        <Wrapper>
+          {movies.map((movie) => (
+            <li key={movie.id}>
+              <MovieTile
+                posterPath={movie.poster_path}
+                title={movie.title}
+                year={movie.release_date.split("-")[0]}
+              />
+            </li>
+          ))}
+        </Wrapper>
+      }
+    />
   );
 };
 
