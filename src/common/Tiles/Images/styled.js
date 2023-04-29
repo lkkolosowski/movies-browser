@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import video from "../../../images/video.svg";
+import video from "../../../icons/video.svg";
 
 export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.color.silver};

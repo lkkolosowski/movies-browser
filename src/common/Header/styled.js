@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as VideoIcon } from "../../images/video.svg";
-import { ReactComponent as LoupeIcon } from "../../images/loupe.svg";
+import { ReactComponent as VideoIcon } from "../../icons/video.svg";
+import { ReactComponent as LoupeIcon } from "../../icons/loupe.svg";
 
 export const Wrapper = styled.header`
   background-color: ${({ theme }) => theme.color.woodsmoke};
