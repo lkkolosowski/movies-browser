@@ -1,5 +1,5 @@
 import Header from "./common/Header";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import MoviesList from "./features/MoviesList";
 import PeopleList from "./features/PeopleList";
 
@@ -15,7 +15,7 @@ function App() {
           <PeopleList />
         </Route>
         <Route path="/">
-          <MoviesList />
+          <Redirect to="/movies" />
         </Route>
       </Switch>
     </HashRouter>
