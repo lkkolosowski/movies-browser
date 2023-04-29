@@ -1,4 +1,4 @@
-import { call, put } from "redux-saga/effects";
+import { call, delay, put } from "redux-saga/effects";
 import {
   fetchPopularMoviesSuccess,
   fetchPopularMoviesError,
@@ -7,6 +7,7 @@ import { getPopularMovies } from "./getDataFromAPI";
 
 function* fetchPopularMoviesHandler() {
   try {
+    yield delay(1000);
     const movies = yield call(getPopularMovies);
     yield put(fetchPopularMoviesSuccess(movies.results));
   } catch (error) {

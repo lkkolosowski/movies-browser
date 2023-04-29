@@ -5,7 +5,7 @@ export const theme = {
     pattensBlue: "#D6E4FF",
     scienceBlue: "#0044CC",
     mine: "#333333",
-    mystic: "E4E6F0",
+    mystic: "#E4E6F0",
     mercury: "#E5E5E5",
     lynch: "#627489",
     snuff: "#DDDDEE",
@@ -23,5 +23,5 @@ export const theme = {
     mobile: "550px",
   },
 
-  shadow: "rgba(186, 199, 213, 0.5)",
+  shadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
 };

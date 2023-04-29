@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ReactComponent as Vector } from "./Vector.svg"
+import { ReactComponent as Vector } from "./vector.svg";
 
 export const Wrapper = styled.div`
   display: inline-flex;
@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 40px 0 103px 0;
   position: static;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     padding-bottom: 39px;
   }
@@ -28,7 +28,7 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
   transition: 0.3s;
-  
+
   &:hover {
     filter: brightness(105%);
   }
@@ -42,33 +42,44 @@ export const Button = styled.button`
       filter: none;
     }
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    gap: 4px;
+  }
 `;
 
 export const StyledVector = styled(Vector)`
   width: 7px;
   height: 11px;
-  fill: ${({ theme }) => theme.color.scienaBlue};
+  fill: ${({ theme }) => theme.color.mine};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 5px;
     height: 8px;
   }
 
-  ${({ right }) => right && css`
-    transform: rotate(180deg);
-  `}
+  ${({ right }) =>
+    right &&
+    css`
+      transform: rotate(180deg);
+      fill: ${({ theme }) => theme.color.scienceBlue};
+    `}
 
-  ${({ small }) => small && css`
-    display: none;
-  
-    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-      display: block;
-    }
-  `}
+  ${({ mobile }) =>
+    mobile &&
+    css`
+      display: none;
 
-  ${({ disabled }) => disabled && css`
-    fill: ${({ theme }) => theme.color.waterloo};
-  `}
+      @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+        display: block;
+      }
+    `}
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      fill: ${({ theme }) => theme.color.waterloo};
+    `}
 `;
 
 export const ButtonText = styled.span`
