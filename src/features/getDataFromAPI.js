@@ -13,3 +13,14 @@ export const getPopularMovies = async () => {
 
   return await response.data;
 };
+
+export const getGenres = async () => {
+  const response = await axios.get(
+    `${URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`
+  );
+  if (!response.ok) {
+    new Error(response.statusText);
+  }
+
+  return await response.data.genres;
+};
