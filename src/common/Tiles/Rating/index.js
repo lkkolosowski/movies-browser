@@ -1,9 +1,10 @@
 import { Star, Wrapper, Vote, Votes } from "./styled";
+import { convertToDecimal } from "./utils";
 
-export const Rating = () => (
+export const Rating = ({ vote, votes }) => (
   <Wrapper>
     <Star />
-    <Vote>7,8</Vote>
-    <Votes>35 Votes</Votes>
+    <Vote>{convertToDecimal(vote)}</Vote>
+    <Votes>{votes} votes</Votes>
   </Wrapper>
 );
