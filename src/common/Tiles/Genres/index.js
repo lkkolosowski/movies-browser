@@ -4,12 +4,12 @@ import { selectGenres } from "../../../features/moviesListSlice";
 import { getGenresNames } from "./utils";
 
 export const Genres = ({ genres }) => {
-  const genresIds = useSelector(selectGenres);
+  const genresId = useSelector(selectGenres);
 
   return (
     genres && (
       <Wrapper>
-        {getGenresNames({ ids: genres, id: genresIds }).map((genre) => (
+        {getGenresNames({ ids: genres, id: genresId }).map((genre) => (
           <Genre key={genre}>{genre}</Genre>
         ))}
       </Wrapper>
