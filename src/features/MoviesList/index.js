@@ -24,7 +24,9 @@ const MoviesList = () => {
                 <MovieTile
                   posterPath={movie.poster_path}
                   title={movie.title}
-                  year={movie.release_date.split("-")[0]}
+                  year={movie.release_date}
+                  vote={movie.vote_average}
+                  votes={movie.vote_count}
                 />
               </li>
             ))}
