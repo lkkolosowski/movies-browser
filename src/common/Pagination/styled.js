@@ -51,7 +51,7 @@ export const Button = styled.button`
 export const StyledVector = styled(Vector)`
   width: 7px;
   height: 11px;
-  fill: ${({ theme }) => theme.color.mine};
+  fill: ${({ theme }) => theme.color.scienceBlue};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 5px;
@@ -62,7 +62,6 @@ export const StyledVector = styled(Vector)`
     right &&
     css`
       transform: rotate(180deg);
-      fill: ${({ theme }) => theme.color.scienceBlue};
     `}
 
   ${({ mobile }) =>
