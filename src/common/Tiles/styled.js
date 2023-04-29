@@ -14,7 +14,7 @@ export const Tile = styled.article`
 `;
 
 export const Description = styled.div`
-  height: 226px;
+  height: 272px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
