@@ -1,10 +1,11 @@
-import styled from "styled-components";
-import { ReactComponent as VideoIcon } from "../../../images/video.svg";
+import styled, { css } from "styled-components";
+import video from "../../../images/video.svg";
 
 export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.color.silver};
   display: flex;
   justify-content: center;
+  position: relative;
   align-items: center;
   aspect-ratio: 2 / 3;
   border-radius: 5px;
@@ -15,17 +16,20 @@ export const Wrapper = styled.div`
 `;
 
 export const Poster = styled.div`
+  position: absolute;
   width: 100%;
   height: 100%;
-  background-image: ${({ background }) => `url(${background})`};
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 5px;
-`;
+  background-size: cover;
+  background-image: ${({ background }) => `url(${background})`};
 
-export const NoPoster = styled(VideoIcon)`
-  width: 50%;
-  height: auto;
-  opacity: 0.6;
+  ${({ noPoster }) =>
+    noPoster &&
+    css`
+      background-size: 50%;
+      background-image: url(${video});
+      opacity: 0.6;
+    `}
 `;
