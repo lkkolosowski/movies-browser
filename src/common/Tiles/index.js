@@ -4,9 +4,9 @@ import { MainInfo } from "./Info";
 import { Rating } from "./Rating";
 import { Description, Tile } from "./styled";
 
-export const MovieTile = ({ posterPath, title, year, vote, votes, genres }) => (
+export const MovieTile = ({ poster, title, year, vote, votes, genres }) => (
   <Tile>
-    <MovieImage posterPath={posterPath} />
+    <MovieImage poster={poster} />
     <Description>
       <MainInfo title={title} year={year} />
       <Genres genres={genres} />

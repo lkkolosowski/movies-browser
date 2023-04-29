@@ -25,7 +25,7 @@ const MoviesList = () => {
             {movies.map((movie) => (
               <li key={movie.id}>
                 <MovieTile
-                  posterPath={movie.poster_path}
+                  poster={movie.poster_path}
                   title={movie.title}
                   year={movie.release_date}
                   vote={movie.vote_average}
