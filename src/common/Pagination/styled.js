@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ReactComponent as Vector } from "./vector.svg";
+import { ReactComponent as Vector } from "./Vector.svg";
 
 export const Wrapper = styled.div`
   display: inline-flex;
