@@ -1,14 +1,12 @@
-import { Image, Video, Wrapper } from "./styled";
+import { Poster, Wrapper } from "./styled";
 
-export const MovieImage = ({ posterPath }) => {
-  const baseUrl = "https://image.tmdb.org/t/p/w300";
+export const MovieImage = ({ poster }) => {
+  const URL = "https://image.tmdb.org/t/p/w300";
+
   return (
     <Wrapper>
-      {posterPath ? (
-        <Image alt="poster" src={`${baseUrl}${posterPath}`} />
-      ) : (
-        <Video />
-      )}
+      <Poster noPoster />
+      {poster && <Poster background={`${URL}${poster}`} />}
     </Wrapper>
   );
 };

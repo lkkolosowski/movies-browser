@@ -1,20 +1,16 @@
 import { Genres } from "./Genres";
 import { MovieImage } from "./Images";
+import { MainInfo } from "./Info";
 import { Rating } from "./Rating";
-import { Info, Tile, Title, Year } from "./styled";
+import { Description, Tile } from "./styled";
 
-export const MovieTile = ({ posterPath, title, year }) => (
+export const MovieTile = ({ poster, title, year, vote, votes, genres }) => (
   <Tile>
-    <MovieImage posterPath={posterPath} />
-    <Info>
-      <div>
-        <Title>{title}</Title>
-        <Year>{year}</Year>
-        <Genres />
-      </div>
-      <div>
-        <Rating />
-      </div>
-    </Info>
+    <MovieImage poster={poster} />
+    <Description>
+      <MainInfo title={title} year={year} />
+      <Genres genres={genres} />
+      <Rating vote={vote} votes={votes} />
+    </Description>
   </Tile>
 );

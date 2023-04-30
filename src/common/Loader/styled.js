@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as LoaderIcon } from "./loaderIcon.svg";
+import { ReactComponent as LoaderIcon } from "../../icons/loader.svg";
 
 export const Wrapper = styled.div`
   margin: 120px auto 0 auto;

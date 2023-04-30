@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as VideoIcon } from "../../images/video.svg";
-import { ReactComponent as LoupeIcon } from "../../images/loupe.svg";
+import { ReactComponent as VideoIcon } from "../../icons/video.svg";
+import { ReactComponent as LoupeIcon } from "../../icons/loupe.svg";
 
 export const Wrapper = styled.header`
   background-color: ${({ theme }) => theme.color.woodsmoke};
@@ -62,11 +62,11 @@ export const Input = styled.input`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  padding: 12px 23px 12px 51px;
+  padding: 12px 24px 12px 56px;
   width: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-    padding: 12px 23px 12px 31px;
+    padding: 12px 18px 12px 32px;
     font-size: 13px;
   }
 `;
@@ -94,10 +94,12 @@ export const Loupe = styled(LoupeIcon)`
   left: 24px;
   top: 50%;
   transform: translateY(-50%);
-  height: 100%;
   pointer-events: none;
+  width: auto;
+  height: 20px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     left: 12px;
+    height: 14px;
   }
 `;
