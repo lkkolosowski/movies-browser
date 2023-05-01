@@ -20,7 +20,7 @@ export const MovieTile = ({
   size,
 }) => (
   <Movie>
-    <MovieImage poster={poster} size={size} />
+    <MovieImage poster={poster} />
     <MovieDescription>
       <MainInfo title={title} year={year} />
       <Genres genres={genres} />
@@ -42,7 +42,7 @@ export const MovieDetailsTile = ({
   size,
 }) => (
   <MovieDetails>
-    <MovieDetailsImage poster={poster} size={size} />
+    <MovieDetailsImage poster={poster} />
     <MovieDetailsDescription>
       <MainInfoDetails title={title} year={year} />
       <AdditionalInfo production={production} release={release} />

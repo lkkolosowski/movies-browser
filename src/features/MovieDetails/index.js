@@ -59,7 +59,6 @@ const MovieDetails = () => {
       <MainWrapper
         content={
           <MovieDetailsTile
-            size={"w500"}
             poster={details.poster_path}
             title={details.original_title}
             year={details.release_date}
