@@ -4,6 +4,16 @@ import { ReactComponent as LoaderIcon } from "../../icons/loader.svg";
 export const Wrapper = styled.div`
   margin: 120px auto 0 auto;
   text-align: center;
+  opacity: 0;
+
+  animation: reveal 0.5s ease-in-out 0.5s;
+  animation-fill-mode: forwards;
+
+  @keyframes reveal {
+    100% {
+      opacity: 1;
+    }
+  }
   
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     margin-top: 24px;

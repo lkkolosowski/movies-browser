@@ -9,6 +9,14 @@ export const Wrapper = styled.ul`
   padding: 0;
   list-style-type: none;
 
+  & > li {
+    transition: transform 0.15s ease-out;
+  }
+
+  & > li:hover {
+    transform: translateY(-12px);
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     grid-template-columns: 1fr 1fr;
   }
