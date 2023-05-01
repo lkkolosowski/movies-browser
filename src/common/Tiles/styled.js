@@ -15,7 +15,6 @@ export const Movie = styled.article`
 
 export const MovieDetails = styled.article`
   color: ${({ theme }) => theme.color.black};
-  margin: 56px 0;
   padding: 40px;
   display: grid;
   gap: 0 40px;
