@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const List = styled.ul`
@@ -37,9 +36,4 @@ export const Item = styled.li`
       transform: translateY(0);
     }
   }
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: ${({ theme }) => theme.color.woodsmoke};
 `;

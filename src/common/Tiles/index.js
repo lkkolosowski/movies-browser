@@ -17,10 +17,10 @@ export const MovieTile = ({
   vote,
   votes,
   genres,
-  size,
+  id,
 }) => (
   <Movie>
-    <MovieImage poster={poster} />
+    <MovieImage id={id} poster={poster} />
     <MovieDescription>
       <MainInfo title={title} year={year} />
       <Genres genres={genres} />

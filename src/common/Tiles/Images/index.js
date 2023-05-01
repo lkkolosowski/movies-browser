@@ -1,13 +1,17 @@
-import { Poster, Wrapper } from "./styled";
+import { toMovie } from "../../../routes";
+import { Poster, StyledLink, Wrapper } from "./styled";
 
-export const MovieImage = ({ poster }) => {
+
+export const MovieImage = ({ poster, id }) => {
   const URL = `https://image.tmdb.org/t/p/w300`;
 
   return (
+    <StyledLink to={toMovie({ id: id })}>
     <Wrapper>
       <Poster noPoster />
       {poster && <Poster background={`${URL}${poster}`} />}
     </Wrapper>
+    </StyledLink>
   );
 };
 
