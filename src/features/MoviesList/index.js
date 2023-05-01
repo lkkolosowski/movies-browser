@@ -3,7 +3,7 @@ import { selectMoviesList, selectStatus } from "../moviesListSlice";
 import { toMovie } from "../../routes";
 import { MainWrapper } from "../../common/MainWrapper";
 import { MovieTile } from "../../common/Tiles";
-import { StyledLink, Wrapper } from "./styled";
+import { StyledLink, List, Item } from "./styled";
 import { Pagination } from "../../common/Pagination";
 import Loader from "../../common/Loader";
 import { Title } from "../../common/Title";
@@ -21,12 +21,11 @@ const MoviesList = () => {
         content={
           <>
             <Title title="Popular Movies"></Title>
-            <Wrapper>
+            <List>
               {popularMovies.map((movie) => (
-                <li key={movie.id}>
+                <Item key={movie.id}>
                   <StyledLink to={toMovie({ id: movie.id })}>
                     <MovieTile
-                      size="w300"
                       poster={movie.poster_path}
                       title={movie.title}
                       year={movie.release_date}
@@ -35,9 +34,9 @@ const MoviesList = () => {
                       genres={movie.genre_ids}
                     />
                   </StyledLink>
-                </li>
+                </Item>
               ))}
-            </Wrapper>
+            </List>
           </>
         }
       />
