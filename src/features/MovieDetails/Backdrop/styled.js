@@ -56,7 +56,10 @@ export const BackdropContent = styled.div`
   left: 0;
   bottom: 0;
   margin-bottom: 56px;
-  padding: 0 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    margin-bottom: 32px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     margin-bottom: 8px;
