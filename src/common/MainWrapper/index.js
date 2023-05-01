@@ -1,10 +1,9 @@
-import { PageWrapper, Title } from "./styled";
+import { PageWrapper } from "./styled";
 
-export const MainWrapper = ({ content, title }) => (
-    <PageWrapper>
-      <Title>
-        {title}
-      </Title>
-      {content}
-    </PageWrapper>
+export const MainWrapper = ({ content }) => (
+  <PageWrapper>{content}</PageWrapper>
+);
+
+export const MainBackdropWrapper = ({ content }) => (
+  <PageWrapper backdrop>{content}</PageWrapper>
 );
