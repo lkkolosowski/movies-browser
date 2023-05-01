@@ -1,4 +1,8 @@
-# DEMO
+# Movies Browser
+
+The project is still in progress.
+
+## DEMO ↓
 
 https://lkkolosowski.github.io/movies-browser/
 
