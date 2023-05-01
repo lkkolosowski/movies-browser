@@ -1,13 +1,11 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const PageWrapper = styled.section`
   max-width: 1400px;
-  margin: 56px auto;
+  margin: 64px auto;
   padding: 0 16px;
 
-  ${({ backdrop }) =>
-    backdrop &&
-    css`
-      margin-top: 0;
-    `}
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    margin: 16px auto;
+  }
 `;
