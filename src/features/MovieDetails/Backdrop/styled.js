@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const MainBackdropWrapper = styled.div`
-  width: 100%;
-  min-width: 320px;
+export const BackdropWrapper = styled.div`
   justify-content: center;
   animation: eclipse 0.75s ease-in-out;
   animation-fill-mode: forwards;
@@ -14,11 +12,55 @@ export const MainBackdropWrapper = styled.div`
   }
 `;
 
-export const BackdropWrapper = styled.section`
+export const Wrapper = styled.section`
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 16px;
   position: relative;
+`;
+
+export const BackdropBody = styled.div`
+  position: relative;
+  padding: 0 16px;
+  aspect-ratio: 16 / 9;
+  background-image: ${({ background }) => `url(${background})`};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: reveal 2s ease-in-out 0.75s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+  @keyframes reveal {
+    100% {
+      opacity: 1;
+    }
+  }
+`;
+
+export const Title = styled.h1`
+  color: ${({ theme }) => theme.color.white};
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 24px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 24px;
+    margin: 4px 0;
+  }
+`;
+
+export const BackdropContent = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 56px;
+  padding: 0 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    margin-bottom: 8px;
+  }
 `;
 
 export const Overlay = styled.div`
@@ -99,50 +141,5 @@ export const Overlay = styled.div`
         rgba(0, 0, 0, 0.740286) 85.86%,
         #000000 92.87%
       );
-  }
-`;
-
-export const Backdrop = styled.div`
-  position: relative;
-  max-width: 1400px;
-  padding: 0 16px;
-  aspect-ratio: 16 / 9;
-  background-image: ${({ background }) => `url(${background})`};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  animation: reveal 2s ease-in-out 0.75s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-
-  @keyframes reveal {
-    100% {
-      opacity: 1;
-    }
-  }
-`;
-
-export const Title = styled.h1`
-  color: ${({ theme }) => theme.color.white};
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 1.2;
-  margin: 24px 0;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    font-size: 24px;
-    margin: 4px 0;
-  }
-`;
-
-export const BackdropContent = styled.div`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  margin-bottom: 56px;
-  padding: 0 16px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    margin-bottom: 8px;
   }
 `;

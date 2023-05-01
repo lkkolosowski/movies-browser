@@ -7,17 +7,9 @@ import {
   selectStatus,
 } from "../movieDetailsSlice";
 import { MainWrapper } from "../../common/MainWrapper";
-import {
-  MainBackdropWrapper,
-  Backdrop,
-  BackdropContent,
-  BackdropWrapper,
-  Overlay,
-  Title,
-} from "./styled";
-import { BackdropRating } from "../../common/Tiles/Rating";
 import { MovieDetailsTile } from "../../common/Tiles";
 import Loader from "../../common/Loader";
+import Backdrop from "./Backdrop";
 
 const MovieDetails = () => {
   const URL = "https://image.tmdb.org/t/p/original";
@@ -37,23 +29,12 @@ const MovieDetails = () => {
   return (
     <>
       {details.backdrop_path && (
-        <MainBackdropWrapper>
-          <BackdropWrapper>
-            <Backdrop background={`${URL}${details.backdrop_path}`}>
-              <Overlay>
-                <BackdropContent>
-                  <Title>{details.original_title}</Title>
-                  {details.vote_count && (
-                    <BackdropRating
-                      vote={details.vote_average}
-                      votes={details.vote_count}
-                    />
-                  )}
-                </BackdropContent>
-              </Overlay>
-            </Backdrop>
-          </BackdropWrapper>
-        </MainBackdropWrapper>
+        <Backdrop
+          background={`${URL}${details.backdrop_path}`}
+          title={details.original_title}
+          vote={details.vote_average}
+          votes={details.vote_count}
+        />
       )}
 
       <MainWrapper
