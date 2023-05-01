@@ -24,3 +24,14 @@ export const getGenres = async () => {
 
   return await response.data.genres;
 };
+
+export const getMovieDetails = async ({ movieId }) => {
+  const response = await axios.get(
+    `${URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`
+  );
+  if (!response.ok) {
+    new Error(response.statusText);
+  }
+
+  return await response.data;
+};

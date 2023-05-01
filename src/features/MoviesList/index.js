@@ -1,16 +1,15 @@
 import { useSelector } from "react-redux";
-import {
-  selectMoviesList,
-  selectStatus,
-} from "../moviesListSlice";
+import { selectMoviesList, selectStatus } from "../moviesListSlice";
+import { toMovie } from "../../routes";
 import { MainWrapper } from "../../common/MainWrapper";
 import { MovieTile } from "../../common/Tiles";
-import { Wrapper } from "./styled";
+import { StyledLink, Wrapper } from "./styled";
 import { Pagination } from "../../common/Pagination";
 import Loader from "../../common/Loader";
+import { Title } from "../../common/Title";
 
 const MoviesList = () => {
-  const movies = useSelector(selectMoviesList);
+  const popularMovies = useSelector(selectMoviesList);
   const status = useSelector(selectStatus);
 
   if (status !== "success") {
@@ -19,22 +18,27 @@ const MoviesList = () => {
   return (
     <>
       <MainWrapper
-        title="Popular Movies"
         content={
-          <Wrapper>
-            {movies.map((movie) => (
-              <li key={movie.id}>
-                <MovieTile
-                  poster={movie.poster_path}
-                  title={movie.title}
-                  year={movie.release_date}
-                  vote={movie.vote_average}
-                  votes={movie.vote_count}
-                  genres={movie.genre_ids}
-                />
-              </li>
-            ))}
-          </Wrapper>
+          <>
+            <Title title="Popular Movies"></Title>
+            <Wrapper>
+              {popularMovies.map((movie) => (
+                <li key={movie.id}>
+                  <StyledLink to={toMovie({ id: movie.id })}>
+                    <MovieTile
+                      size="w300"
+                      poster={movie.poster_path}
+                      title={movie.title}
+                      year={movie.release_date}
+                      vote={movie.vote_average}
+                      votes={movie.vote_count}
+                      genres={movie.genre_ids}
+                    />
+                  </StyledLink>
+                </li>
+              ))}
+            </Wrapper>
+          </>
         }
       />
       <Pagination />

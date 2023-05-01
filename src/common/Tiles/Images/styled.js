@@ -10,8 +10,26 @@ export const Wrapper = styled.div`
   aspect-ratio: 2 / 3;
   border-radius: 5px;
 
+  ${({ movieDetails }) =>
+    movieDetails &&
+    css`
+      width: 312px;
+      grid-row: span 2;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+        width: 215px;
+      }
+      @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+        width: 114px;
+      }
+    `}
+
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-    margin-right: 16px;
+    ${({ movieDetails }) =>
+      !movieDetails &&
+      css`
+        margin-right: 16px;
+      `}
   }
 `;
 
