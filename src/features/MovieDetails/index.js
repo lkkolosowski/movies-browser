@@ -6,11 +6,15 @@ import {
   selectDetails,
   selectStatus,
 } from "../movieDetailsSlice";
+import { MainWrapper } from "../../common/MainWrapper";
 import {
   MainBackdropWrapper,
-  MainWrapper,
-} from "../../common/MainWrapper";
-import { Backdrop, BackdropContent, BackdropWrapper, Title } from "./styled";
+  Backdrop,
+  BackdropContent,
+  BackdropWrapper,
+  Overlay,
+  Title,
+} from "./styled";
 import { BackdropRating } from "../../common/Tiles/Rating";
 import { MovieDetailsTile } from "../../common/Tiles";
 import Loader from "../../common/Loader";
@@ -33,10 +37,10 @@ const MovieDetails = () => {
   return (
     <>
       {details.backdrop_path && (
-        <BackdropWrapper>
-          <MainBackdropWrapper
-            content={
-              <Backdrop background={`${URL}${details.backdrop_path}`}>
+        <MainBackdropWrapper>
+          <BackdropWrapper>
+            <Backdrop background={`${URL}${details.backdrop_path}`}>
+              <Overlay>
                 <BackdropContent>
                   <Title>{details.original_title}</Title>
                   {details.vote_count && (
@@ -46,10 +50,10 @@ const MovieDetails = () => {
                     />
                   )}
                 </BackdropContent>
-              </Backdrop>
-            }
-          />
-        </BackdropWrapper>
+              </Overlay>
+            </Backdrop>
+          </BackdropWrapper>
+        </MainBackdropWrapper>
       )}
 
       <MainWrapper
