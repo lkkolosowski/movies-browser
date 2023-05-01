@@ -18,11 +18,18 @@ export const Wrapper = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    gap: 16px;
     grid-template-columns: 1fr 1fr;
+    & > li:hover {
+      transform: translateY(-8px);
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     grid-template-columns: 1fr;
+    & > li:hover {
+      transform: translateY(0);
+    }
   }
 `;
 
