@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.ul`
@@ -12,11 +13,12 @@ export const Wrapper = styled.ul`
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
-    grid-template-columns: 1fr 1fr;
-  }
-
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     grid-template-columns: 1fr;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.woodsmoke};
 `;
