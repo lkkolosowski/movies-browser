@@ -6,14 +6,10 @@ import {
   selectDetails,
   selectStatus,
 } from "../movieDetailsSlice";
-import {
-  MainBackdropWrapper,
-  MainWrapper,
-} from "../../common/MainWrapper";
-import { Backdrop, BackdropContent, BackdropWrapper, Title } from "./styled";
-import { BackdropRating } from "../../common/Tiles/Rating";
+import { MainWrapper } from "../../common/MainWrapper";
 import { MovieDetailsTile } from "../../common/Tiles";
 import Loader from "../../common/Loader";
+import Backdrop from "./Backdrop";
 
 const MovieDetails = () => {
   const URL = "https://image.tmdb.org/t/p/original";
@@ -33,29 +29,17 @@ const MovieDetails = () => {
   return (
     <>
       {details.backdrop_path && (
-        <BackdropWrapper>
-          <MainBackdropWrapper
-            content={
-              <Backdrop background={`${URL}${details.backdrop_path}`}>
-                <BackdropContent>
-                  <Title>{details.original_title}</Title>
-                  {details.vote_count && (
-                    <BackdropRating
-                      vote={details.vote_average}
-                      votes={details.vote_count}
-                    />
-                  )}
-                </BackdropContent>
-              </Backdrop>
-            }
-          />
-        </BackdropWrapper>
+        <Backdrop
+          background={`${URL}${details.backdrop_path}`}
+          title={details.original_title}
+          vote={details.vote_average}
+          votes={details.vote_count}
+        />
       )}
 
       <MainWrapper
         content={
           <MovieDetailsTile
-            size={"w500"}
             poster={details.poster_path}
             title={details.original_title}
             year={details.release_date}

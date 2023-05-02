@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import video from "../../../icons/video.svg";
 
@@ -50,4 +51,14 @@ export const Poster = styled.div`
       background-image: url(${video});
       opacity: 0.6;
     `}
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.woodsmoke};
+  transition: opacity 0.15s ease-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;

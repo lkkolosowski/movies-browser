@@ -17,14 +17,18 @@ export const MovieTile = ({
   vote,
   votes,
   genres,
-  size,
+  id,
 }) => (
   <Movie>
-    <MovieImage poster={poster} size={size} />
+    <MovieImage id={id} poster={poster} />
     <MovieDescription>
-      <MainInfo title={title} year={year} />
-      <Genres genres={genres} />
-      <Rating vote={vote} votes={votes} />
+      <div>
+        <MainInfo title={title} year={year} />
+        <Genres genres={genres} />
+      </div>
+      <div>
+        <Rating vote={vote} votes={votes} />
+      </div>
     </MovieDescription>
   </Movie>
 );
@@ -39,10 +43,9 @@ export const MovieDetailsTile = ({
   overview,
   production,
   release,
-  size,
 }) => (
   <MovieDetails>
-    <MovieDetailsImage poster={poster} size={size} />
+    <MovieDetailsImage poster={poster} />
     <MovieDetailsDescription>
       <MainInfoDetails title={title} year={year} />
       <AdditionalInfo production={production} release={release} />

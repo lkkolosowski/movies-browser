@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux";
 import { selectMoviesList, selectStatus } from "../moviesListSlice";
-import { toMovie } from "../../routes";
 import { MainWrapper } from "../../common/MainWrapper";
 import { MovieTile } from "../../common/Tiles";
-import { StyledLink, Wrapper } from "./styled";
+import { List, Item } from "./styled";
 import { Pagination } from "../../common/Pagination";
 import Loader from "../../common/Loader";
 import { Title } from "../../common/Title";
@@ -21,23 +20,21 @@ const MoviesList = () => {
         content={
           <>
             <Title title="Popular Movies"></Title>
-            <Wrapper>
+            <List>
               {popularMovies.map((movie) => (
-                <li key={movie.id}>
-                  <StyledLink to={toMovie({ id: movie.id })}>
-                    <MovieTile
-                      size="w300"
-                      poster={movie.poster_path}
-                      title={movie.title}
-                      year={movie.release_date}
-                      vote={movie.vote_average}
-                      votes={movie.vote_count}
-                      genres={movie.genre_ids}
-                    />
-                  </StyledLink>
-                </li>
+                <Item key={movie.id}>
+                  <MovieTile
+                    id={movie.id}
+                    poster={movie.poster_path}
+                    title={movie.title}
+                    year={movie.release_date}
+                    vote={movie.vote_average}
+                    votes={movie.vote_count}
+                    genres={movie.genre_ids}
+                  />
+                </Item>
               ))}
-            </Wrapper>
+            </List>
           </>
         }
       />
