@@ -4,6 +4,7 @@ import { MainWrapper } from "../../common/MainWrapper";
 import { MovieTile } from "../../common/Tiles";
 import { List, Item } from "./styled";
 import { Pagination } from "../../common/Pagination";
+import { Error } from "../../common/Error";
 import Loader from "../../common/Loader";
 import { Title } from "../../common/Title";
 
@@ -13,7 +14,7 @@ const MoviesList = () => {
 
   if (status !== "success") {
     return <Loader />;
-  }
+  } else { <Error /> };
   return (
     <>
       <MainWrapper
