@@ -70,7 +70,7 @@ export const Subtitle = styled.h2`
 
 export const Button = styled.button`
   font-family: 'Open Sans', sans-serif;
-  background-color: ${({ theme }) => theme.color.scienaBlue};
+  background-color: ${({ theme }) => theme.color.scienceBlue};
   cursor: pointer;
   color: ${({ theme }) => theme.color.white};
   font-weight: 700;
