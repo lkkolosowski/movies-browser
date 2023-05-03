@@ -1,4 +1,4 @@
-import { StyledNavLink } from "../Header/Navigation/styled";
+import { StyledNavLink } from "../Header/Navigation/index";
 import { Wrapper, ErrorIcon, Title, Subtitle, Button } from "./styled";
 import { MainWrapper } from "../MainWrapper";
 
