@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { ReactComponent as Error } from "./error.svg";
 
 export const Wrapper = styled.div`
-  margin: 195px auto 0 auto;
+  margin: 195px auto;
   text-align: center;
-  height: 100vh;
+  margin-bottom: 572px;
   
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     margin-top: 100px;
@@ -70,24 +70,20 @@ export const Subtitle = styled.h2`
 
 export const Button = styled.button`
   font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
   background-color: ${({ theme }) => theme.color.scienceBlue};
-  cursor: pointer;
   color: ${({ theme }) => theme.color.white};
   font-weight: 700;
   font-size: 14px;
   padding: 16px 24px;
   border-radius: 5px;
-  border: none;
-  line-height: 19px;
   transition: 0.3s;
 
   &:hover {
-    filter: brightness(125%);
-    transform: scale(1.05);
+    shadow: 0 0 0 2px ${({ theme }) => theme.Shadow};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    padding: 10px 16px;
-    font-size: 10px;
+    font-size: 18px;
   }
 `;
