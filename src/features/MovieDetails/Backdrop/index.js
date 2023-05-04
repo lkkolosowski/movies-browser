@@ -1,4 +1,4 @@
-import { BackdropRating } from "../../../common/Tiles/Rating";
+import { BackdropRating } from "../../../common/Rating";
 import {
   BackdropBody,
   BackdropContent,
@@ -8,24 +8,21 @@ import {
   Title,
 } from "./styled";
 
-const Backdrop = ({ background, title, vote, votes }) => (
-  <BackdropWrapper>
-    <Wrapper>
-      <BackdropBody background={background}>
-        <Overlay>
-          <BackdropContent>
-            <Title>{title}</Title>
-            {votes && (
-              <BackdropRating
-                vote={vote}
-                votes={votes}
-              />
-            )}
-          </BackdropContent>
-        </Overlay>
-      </BackdropBody>
-    </Wrapper>
-  </BackdropWrapper>
-);
+export const Backdrop = ({ background, title, vote, votes }) => {
+  const URL = "https://image.tmdb.org/t/p/original";
 
-export default Backdrop;
+  return (
+    <BackdropWrapper>
+      <Wrapper>
+        <BackdropBody background={`${URL}${background}`}>
+          <Overlay>
+            <BackdropContent>
+              <Title>{title}</Title>
+              {votes && <BackdropRating vote={vote} votes={votes} />}
+            </BackdropContent>
+          </Overlay>
+        </BackdropBody>
+      </Wrapper>
+    </BackdropWrapper>
+  );
+};
