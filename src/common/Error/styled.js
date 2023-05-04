@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as Error } from "./error.svg";
 
 export const Wrapper = styled.div`
@@ -80,10 +81,14 @@ export const Button = styled.button`
   transition: 0.3s;
 
   &:hover {
-    shadow: 0 0 0 2px ${({ theme }) => theme.Shadow};
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.shadow}
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     font-size: 18px;
   }
+`;
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: ${({ theme }) => theme.color.black};
 `;
