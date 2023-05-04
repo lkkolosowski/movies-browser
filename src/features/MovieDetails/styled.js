@@ -8,12 +8,13 @@ export const List = styled.ul`
   padding: 0;
   list-style-type: none;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(162px, 1fr));
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    grid-template-columns: 1fr 1fr;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
