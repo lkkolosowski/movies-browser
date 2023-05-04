@@ -2,11 +2,11 @@ import { useSelector } from "react-redux";
 import { selectMoviesList, selectStatus } from "../moviesListSlice";
 import { MainWrapper } from "../../common/MainWrapper";
 import { MovieTile } from "../../common/MovieTile";
-import { List, Item } from "./styled";
 import { Pagination } from "../../common/Pagination";
 import { Error } from "../../common/Error";
 import { Loader } from "../../common/Loader";
 import { Title } from "../../common/Title";
+import { List, Item } from "./styled";
 
 const MoviesList = () => {
   const popularMovies = useSelector(selectMoviesList);
