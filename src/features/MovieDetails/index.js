@@ -7,12 +7,15 @@ import {
   selectStatus,
 } from "../movieDetailsSlice";
 import { MainWrapper } from "../../common/MainWrapper";
-import { MovieDetailsTile } from "../../common/Tiles";
-import Loader from "../../common/Loader";
-import Backdrop from "./Backdrop";
+import { MovieDetailsTile } from "../../common/MovieDetailsTile";
+import { Error } from "../../common/Error";
+import { Loader } from "../../common/Loader";
+import { Backdrop } from "./Backdrop";
+import { Subtitle } from "../../common/Title";
+import { PersonTile } from "../../common/PersonTile";
+import { Item, List } from "./styled";
 
 const MovieDetails = () => {
-  const URL = "https://image.tmdb.org/t/p/original";
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -23,14 +26,15 @@ const MovieDetails = () => {
   const status = useSelector(selectStatus);
   const details = useSelector(selectDetails);
 
-  if (status !== "success") {
-    return <Loader />;
-  }
   return (
+    status === "loading" ?
+    <Loader /> :
+    status === "error" ?
+    <Error /> :
     <>
       {details.backdrop_path && (
         <Backdrop
-          background={`${URL}${details.backdrop_path}`}
+          background={details.backdrop_path}
           title={details.original_title}
           vote={details.vote_average}
           votes={details.vote_count}
@@ -39,17 +43,38 @@ const MovieDetails = () => {
 
       <MainWrapper
         content={
-          <MovieDetailsTile
-            poster={details.poster_path}
-            title={details.original_title}
-            year={details.release_date}
-            genres={details.genres}
-            vote={details.vote_average}
-            votes={details.vote_count}
-            overview={details.overview}
-            production={details.production_countries}
-            release={details.release_date}
-          />
+          <>
+            <MovieDetailsTile
+              poster={details.poster_path}
+              title={details.original_title}
+              year={details.release_date}
+              genres={details.genres}
+              vote={details.vote_average}
+              votes={details.vote_count}
+              overview={details.overview}
+              production={details.production_countries}
+              release={details.release_date}
+            />
+            <Subtitle subtitle="Cast" />
+            <List>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+            </List>
+
+            <Subtitle subtitle="Crew" />
+            <List>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+              <Item><PersonTile /></Item>
+            </List>
+          </>
         }
       />
     </>
