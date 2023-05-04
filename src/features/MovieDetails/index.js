@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getMovieId,
+  selectCast,
+  selectCrew,
   selectDetails,
   selectStatus,
 } from "../movieDetailsSlice";
@@ -23,8 +25,10 @@ const MovieDetails = () => {
     dispatch(getMovieId({ movieId: id }));
   }, [id, dispatch]);
 
-  const status = useSelector(selectStatus);
   const details = useSelector(selectDetails);
+  const cast = useSelector(selectCast);
+  const crew = useSelector(selectCrew);
+  const status = useSelector(selectStatus);
 
   return (
     status === "loading" ?
@@ -57,22 +61,30 @@ const MovieDetails = () => {
             />
             <Subtitle subtitle="Cast" />
             <List>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
+              {cast.map((person) => (
+                <Item key={person.credit_id}>
+                  <PersonTile
+                    id={person.id}
+                    name={person.name}
+                    role={person.character}
+                    poster={person.profile_path}
+                  />
+                </Item>
+              ))}
             </List>
 
             <Subtitle subtitle="Crew" />
             <List>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
-              <Item><PersonTile /></Item>
+              {crew.map((person) => (
+                <Item key={person.credit_id}>
+                  <PersonTile
+                    id={person.id}
+                    name={person.name}
+                    role={person.job}
+                    poster={person.profile_path}
+                  />
+                </Item>
+              ))}
             </List>
           </>
         }

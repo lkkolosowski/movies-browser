@@ -1,10 +1,10 @@
 import { PersonImage } from "../Images";
-import { FullName, Person, Role } from "./styled";
+import { Name, Person, Role } from "./styled";
 
-export const PersonTile = () => (
+export const PersonTile = ({ name, role, poster, id }) => (
   <Person>
-    <PersonImage />
-    <FullName>Liu Yifei</FullName>
-    <Role>Mulan</Role>
+    <PersonImage poster={poster} id={id}/>
+    <Name>{name}</Name>
+    <Role>{role}</Role>
   </Person>
 );

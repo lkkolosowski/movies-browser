@@ -1,4 +1,4 @@
-import { toMovie } from "../../routes";
+import { toMovie, toPeople } from "../../routes";
 import { Poster, StyledLink, Wrapper } from "./styled";
 
 export const MovieImage = ({ poster, id }) => {
@@ -25,13 +25,15 @@ export const MovieDetailsImage = ({ poster }) => {
   );
 };
 
-export const PersonImage = ({ poster }) => {
-  const URL = "https://image.tmdb.org/t/p";
+export const PersonImage = ({ poster, id }) => {
+  const URL = "https://image.tmdb.org/t/p/w185";
 
   return (
-    <Wrapper person>
-      <Poster noPerson />
-      {poster && <Poster background={`${URL}${poster}`} />}
-    </Wrapper>
+    <StyledLink to={toPeople()}> {/* this link will lead to a person (toPerson) in the future */}
+      <Wrapper person>
+        <Poster noPerson />
+        {poster && <Poster background={`${URL}${poster}`} />}
+      </Wrapper>
+    </StyledLink>
   );
 };
