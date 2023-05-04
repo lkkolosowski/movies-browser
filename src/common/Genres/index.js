@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Wrapper, Genre } from "./styled";
-import { selectGenres } from "../../../features/moviesListSlice";
+import { selectGenres } from "../../features/moviesListSlice";
 import { getNames, extractNames } from "./utils";
 
 export const Genres = ({ genres }) => {

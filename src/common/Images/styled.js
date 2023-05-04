@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import video from "../../../icons/video.svg";
+import video from "../../icons/video.svg";
+import person from "../../icons/person.svg";
 
 export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.color.silver};
@@ -25,9 +26,15 @@ export const Wrapper = styled.div`
       }
     `}
 
+    ${({ person }) =>
+    person &&
+    css`
+      aspect-ratio: 3 / 4;
+    `}
+
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-    ${({ movieDetails }) =>
-      !movieDetails &&
+    ${({ movieDetails, person }) =>
+      !(movieDetails || person) &&
       css`
         margin-right: 16px;
       `}
@@ -44,11 +51,19 @@ export const Poster = styled.div`
   background-size: cover;
   background-image: ${({ background }) => `url(${background})`};
 
-  ${({ noPoster }) =>
-    noPoster &&
+  ${({ noMovie }) =>
+    noMovie &&
     css`
       background-size: 50%;
       background-image: url(${video});
+      opacity: 0.6;
+    `}
+
+  ${({ noPerson }) =>
+    noPerson &&
+    css`
+      background-size: 33%;
+      background-image: url(${person});
       opacity: 0.6;
     `}
 `;
