@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as Error } from "./error.svg";
 
 export const Wrapper = styled.div`
   margin: 195px auto;
   text-align: center;
-  margin-bottom: 572px;
-  
+  color: ${({ theme }) => theme.color.woodsmoke};
+
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    margin-top: 100px;
+    margin: 100px auto;
   }
 `;
 
@@ -18,15 +19,15 @@ export const ErrorIcon = styled(Error)`
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 80px;
   }
-  
+
   .animate {
     animation: wobble 1s ease-in-out infinite;
 
-    @keyframes wobble { 
+    @keyframes wobble {
       0% {
         transform: translate(0, 6px);
       }
-    
+
       25% {
         transform: translate(-2px, -2px);
       }
@@ -36,7 +37,7 @@ export const ErrorIcon = styled(Error)`
       75% {
         transform: translate(2px, -2px);
       }
-            
+
       100% {
         transform: translate(0, 6px);
       }
@@ -46,8 +47,10 @@ export const ErrorIcon = styled(Error)`
 
 export const Title = styled.h1`
   font-size: 36px;
+  font-weight: 600;
   margin-top: 38px;
   margin-bottom: 0px;
+  line-height: 1.2;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     font-size: 20px;
@@ -58,18 +61,19 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   font-size: 22px;
   font-weight: 500;
-  margin-top: 24px;
-  margin-bottom: 24px;
+  margin: 24px auto;
+  line-height: 1.3;
+  max-width: 440px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     font-size: 16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 16px auto;
   }
 `;
 
-export const Button = styled.button`
-  font-family: 'Open Sans', sans-serif;
+export const StyledLink = styled(Link)`
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
   text-decoration: none;
   background-color: ${({ theme }) => theme.color.scienceBlue};
   color: ${({ theme }) => theme.color.white};
@@ -77,13 +81,9 @@ export const Button = styled.button`
   font-size: 14px;
   padding: 16px 24px;
   border-radius: 5px;
-  transition: 0.3s;
+  transition: opacity 0.3s ease-in-out;
 
   &:hover {
-    shadow: 0 0 0 2px ${({ theme }) => theme.Shadow};
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    font-size: 18px;
+    opacity: 0.7;
   }
 `;

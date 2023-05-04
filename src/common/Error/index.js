@@ -1,5 +1,5 @@
-import { StyledNavLink } from "../Header/Navigation/index";
-import { Wrapper, ErrorIcon, Title, Subtitle, Button } from "./styled";
+import { toMovies } from "../../routes";
+import { Wrapper, ErrorIcon, Title, Subtitle, StyledLink } from "./styled";
 import { MainWrapper } from "../MainWrapper";
 
 export const Error = () => {
@@ -14,13 +14,9 @@ export const Error = () => {
           <Subtitle>
             Please check your network connection and try again
           </Subtitle>
-          <StyledNavLink
-            to="/movies"
-          >
-            <Button>
+          <StyledLink to={toMovies()}>
               Back to home page
-            </Button>
-          </StyledNavLink>
+          </StyledLink>
         </Wrapper >
       }
     />
