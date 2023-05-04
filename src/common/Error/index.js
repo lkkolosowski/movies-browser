@@ -8,16 +8,12 @@ export const Error = () => {
       content={
         <Wrapper>
           <ErrorIcon />
-          <Title>
-            Ooops! Something went wrong...
-          </Title>
+          <Title>Ooops! Something went wrong...</Title>
           <Subtitle>
             Please check your network connection and try again
           </Subtitle>
-          <StyledLink to={toMovies()}>
-              Back to home page
-          </StyledLink>
-        </Wrapper >
+          <StyledLink to={toMovies()}>Back to home page</StyledLink>
+        </Wrapper>
       }
     />
   );
