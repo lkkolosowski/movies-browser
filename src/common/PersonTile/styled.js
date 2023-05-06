@@ -18,7 +18,7 @@ export const Name = styled.p`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
-  margin: 12px -16px 8px;
+  margin: 12px 0 8px;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -29,7 +29,7 @@ export const Name = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     font-size: 14px;
     margin: 8px 0;
-    margin: 8px -8px;
+    margin: 8px 0;
   }
 `;
 
@@ -38,7 +38,6 @@ export const Role = styled.span`
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
-  margin: 0 -16px;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -48,6 +47,5 @@ export const Role = styled.span`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     font-size: 13px;
-    margin: 0 -8px;
   }
 `;
