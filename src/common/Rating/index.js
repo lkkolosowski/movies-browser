@@ -21,7 +21,7 @@ export const Rating = ({ vote, votes }) => (
 
 export const BackdropRating = ({ vote, votes }) => (
   <BackdropRatingWrapper>
-    <Star backdrop />
+    <Star backdrop="true" />
     <Average backdrop>{toDecimal(vote)}</Average>
     <Total backdrop>/ 10</Total>
     <Count backdrop>{votes} votes</Count>

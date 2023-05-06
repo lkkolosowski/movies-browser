@@ -5,13 +5,14 @@ import {
   getMovieId,
   selectMovieId,
 } from "./movieDetailsSlice";
-import { getMovieDetails } from "./getDataFromAPI";
+import { getMovieCredits, getMovieDetails } from "./getDataFromAPI";
 
 function* fetchMovieDetailsHandler() {
   try {
     const id = yield select(selectMovieId);
     const details = yield call(getMovieDetails, { movieId: id });
-    yield put(fetchMovieDetailsSuccess({ details }));
+    const credits = yield call(getMovieCredits, { movieId: id });
+    yield put(fetchMovieDetailsSuccess({ details, credits }));
   } catch (error) {
     yield put(fetchMovieDetailsError());
   }

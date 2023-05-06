@@ -12,7 +12,7 @@ export const Pagination = () => {
     <Wrapper>
       <Button>
         <StyledVector />
-        <StyledVector mobile />
+        <StyledVector mobile="true" />
         <ButtonText>First</ButtonText>
       </Button>
       <Button>
@@ -25,12 +25,12 @@ export const Pagination = () => {
       <PageText>500</PageText>
       <Button>
         <ButtonText>Next</ButtonText>
-        <StyledVector right />
+        <StyledVector right="true" />
       </Button>
       <Button>
         <ButtonText>Last</ButtonText>
-        <StyledVector right />
-        <StyledVector right mobile />
+        <StyledVector right="true" />
+        <StyledVector right="true" mobile="true" />
       </Button>
     </Wrapper>
   );
