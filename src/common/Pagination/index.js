@@ -7,27 +7,27 @@ import {
   PageText,
 } from "./styled";
 
-export const Pagination = () => {
+export const Pagination = ({toPrevPage, toNextPage, pageNumber, totalPages, toFirstPage, toLastPage}) => {
   return (
     <Wrapper>
-      <Button>
+      <Button onClick={toFirstPage}>
         <StyledVector />
         <StyledVector mobile="true" />
         <ButtonText>First</ButtonText>
       </Button>
-      <Button>
+      <Button onClick={toPrevPage}>
         <StyledVector />
         <ButtonText>Previous</ButtonText>
       </Button>
       <Text>Page</Text>
-      <PageText>1</PageText>
+      <PageText>{pageNumber}</PageText>
       <Text>of</Text>
-      <PageText>500</PageText>
-      <Button>
+      <PageText>{totalPages}</PageText>
+      <Button onClick={toNextPage}>
         <ButtonText>Next</ButtonText>
         <StyledVector right="true" />
       </Button>
-      <Button>
+      <Button onClick={toLastPage}>
         <ButtonText>Last</ButtonText>
         <StyledVector right="true" />
         <StyledVector right="true" mobile="true" />
