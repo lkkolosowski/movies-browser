@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   align-items: center;
   aspect-ratio: 2 / 3;
   border-radius: 5px;
+  transition: opacity 0.15s ease-out;
 
   ${({ movieDetails }) =>
     movieDetails &&
@@ -26,7 +27,7 @@ export const Wrapper = styled.div`
       }
     `}
 
-    ${({ person }) =>
+  ${({ person }) =>
     person &&
     css`
       aspect-ratio: 3 / 4;
