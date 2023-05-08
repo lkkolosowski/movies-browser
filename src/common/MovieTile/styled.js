@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Movie = styled.article`
@@ -24,5 +25,16 @@ export const MovieDescription = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     height: auto;
     justify-content: flex-start;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.woodsmoke};
+  display: block;
+  height: 100%;
+
+  &:hover article > div:first-child {
+    opacity: 0.7;
   }
 `;

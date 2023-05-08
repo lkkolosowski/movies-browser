@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Person = styled.article`
@@ -47,5 +48,16 @@ export const Role = styled.span`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     font-size: 13px;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.woodsmoke};
+  display: block;
+  height: 100%;
+
+  &:hover article > div:first-child {
+    opacity: 0.7;
   }
 `;
