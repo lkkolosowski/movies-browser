@@ -14,7 +14,7 @@ export const MovieImage = ({ poster, id }) => {
   );
 };
 
-export const MovieDetailsImage = ({ poster }) => {
+export const DetailsImage = ({ poster }) => {
   const URL = "https://image.tmdb.org/t/p/w500";
 
   return (
