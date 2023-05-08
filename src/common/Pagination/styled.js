@@ -7,11 +7,12 @@ export const StyledPagination = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 40px 0 103px 0;
+  margin: 40px 0;
   position: static;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    padding-bottom: 39px;
+    gap: 8px;
+    margin: 32px 0 16px;
   }
 `;
 
@@ -38,7 +39,7 @@ export const Button = styled.button`
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: filter 0.3s ease-in-out;
 
   &:hover {
     filter: brightness(105%);
