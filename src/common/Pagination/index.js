@@ -1,4 +1,5 @@
 import {
+  StyledPagination,
   Wrapper,
   Button,
   StyledVector,
@@ -7,31 +8,40 @@ import {
   PageText,
 } from "./styled";
 
-export const Pagination = ({toPrevPage, toNextPage, pageNumber, totalPages, toFirstPage, toLastPage}) => {
+export const Pagination = ({
+  toPrevPage,
+  toNextPage,
+  pageNumber,
+  totalPages,
+  toFirstPage,
+  toLastPage,
+}) => {
   return (
-    <Wrapper>
-      <Button onClick={toFirstPage}>
+    <StyledPagination>
+      <Button disabled={pageNumber === 1} onClick={toFirstPage}>
         <StyledVector />
         <StyledVector mobile="true" />
         <ButtonText>First</ButtonText>
       </Button>
-      <Button onClick={toPrevPage}>
+      <Button disabled={pageNumber === 1} onClick={toPrevPage}>
         <StyledVector />
         <ButtonText>Previous</ButtonText>
       </Button>
-      <Text>Page</Text>
-      <PageText>{pageNumber}</PageText>
-      <Text>of</Text>
-      <PageText>{totalPages}</PageText>
-      <Button onClick={toNextPage}>
+      <Wrapper>
+        <Text>Page</Text>
+        <PageText>{pageNumber}</PageText>
+        <Text>of</Text>
+        <PageText>{totalPages}</PageText>
+      </Wrapper>
+      <Button disabled={pageNumber === totalPages} onClick={toNextPage}>
         <ButtonText>Next</ButtonText>
         <StyledVector right="true" />
       </Button>
-      <Button onClick={toLastPage}>
+      <Button disabled={pageNumber === totalPages} onClick={toLastPage}>
         <ButtonText>Last</ButtonText>
         <StyledVector right="true" />
         <StyledVector right="true" mobile="true" />
       </Button>
-    </Wrapper>
+    </StyledPagination>
   );
 };
