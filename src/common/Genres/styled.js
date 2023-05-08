@@ -4,13 +4,17 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 8px 0;
+  margin: 8px 0 10px;
 
   ${({ details }) =>
     details &&
     css`
       margin: 0;
     `}
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    margin: 8px 0;
+  }
 `;
 
 export const Genre = styled.p`
