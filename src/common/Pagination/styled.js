@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as Vector } from "./vector.svg";
 
-export const Wrapper = styled.div`
+export const StyledPagination = styled.div`
   display: inline-flex;
-  gap: 8px;
+  gap: 12px;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -12,6 +12,17 @@ export const Wrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     padding-bottom: 39px;
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: inline-flex;
+  gap: 8px;
+  margin: 0 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    gap: 2px;
+    margin: 0;
   }
 `;
 
@@ -36,7 +47,12 @@ export const Button = styled.button`
   &:disabled {
     background-color: ${({ theme }) => theme.color.mystic};
     color: ${({ theme }) => theme.color.woodsmoke};
-    cursor: not-allowed;
+    cursor: default;
+    pointer-events: none;
+
+    & svg {
+      fill: ${({ theme }) => theme.color.waterloo};
+    }
 
     &:hover {
       filter: none;
@@ -45,6 +61,7 @@ export const Button = styled.button`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     gap: 4px;
+    padding: 8px 12px;
   }
 `;
 
@@ -72,12 +89,6 @@ export const StyledVector = styled(Vector)`
       @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
         display: block;
       }
-    `}
-
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      fill: ${({ theme }) => theme.color.waterloo};
     `}
 `;
 
