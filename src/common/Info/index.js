@@ -23,7 +23,7 @@ export const MainInfo = ({ title, year }) => (
 
 export const AdditionalInfo = ({ production, release }) => (
   <Wrapper>
-    {production.length !== 0 && (
+    {production && (
       <Paragraph>
         <Attribute mobile>Production:</Attribute>
         <Value>{separateNamesByCommas(production)}</Value>
@@ -33,6 +33,23 @@ export const AdditionalInfo = ({ production, release }) => (
       <Paragraph>
         <Attribute mobile>Release date:</Attribute>
         <Value>{reverseString(release)}</Value>
+      </Paragraph>
+    )}
+  </Wrapper>
+);
+
+export const PersonInfo = ({ dateOfBirth, placeOfBirth }) => (
+  <Wrapper>
+    {dateOfBirth && (
+      <Paragraph>
+        <Attribute mobile>Date of birth:</Attribute>
+        <Value>{reverseString(dateOfBirth)}</Value>
+      </Paragraph>
+    )}
+    {placeOfBirth && (
+      <Paragraph>
+        <Attribute mobile>Place of birth:</Attribute>
+        <Value>{placeOfBirth}</Value>
       </Paragraph>
     )}
   </Wrapper>
