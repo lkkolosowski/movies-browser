@@ -8,7 +8,7 @@ export const MovieImage = ({ poster, id }) => {
     <StyledLink to={toMovie({ id: id })}>
       <Wrapper>
         <Poster noMovie />
-        {poster && <Poster background={`${URL}${poster}`} />}
+        {poster && <Poster reveal background={`${URL}${poster}`} />}
       </Wrapper>
     </StyledLink>
   );
@@ -20,7 +20,7 @@ export const DetailsImage = ({ poster }) => {
   return (
     <Wrapper movieDetails>
       <Poster noMovie />
-      {poster && <Poster background={`${URL}${poster}`} />}
+      {poster && <Poster reveal background={`${URL}${poster}`} />}
     </Wrapper>
   );
 };
@@ -31,7 +31,7 @@ export const PersonImage = ({ poster }) => {
   return (
     <Wrapper person>
       <Poster noPerson />
-      {poster && <Poster background={`${URL}${poster}`} />}
+      {poster && <Poster reveal background={`${URL}${poster}`} />}
     </Wrapper>
   );
 };
