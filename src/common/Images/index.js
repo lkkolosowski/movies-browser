@@ -6,7 +6,7 @@ export const MovieImage = ({ poster }) => {
   return (
     <Wrapper>
       <Poster noMovie />
-      {poster && <Poster reveal background={`${URL}${poster}`} />}
+      {poster && <Poster background={`${URL}${poster}`} />}
     </Wrapper>
   );
 };
@@ -17,7 +17,7 @@ export const DetailsImage = ({ poster }) => {
   return (
     <Wrapper movieDetails>
       <Poster noMovie />
-      {poster && <Poster reveal background={`${URL}${poster}`} />}
+      {poster && <Poster background={`${URL}${poster}`} />}
     </Wrapper>
   );
 };
@@ -28,7 +28,7 @@ export const PersonImage = ({ poster }) => {
   return (
     <Wrapper person>
       <Poster noPerson />
-      {poster && <Poster reveal background={`${URL}${poster}`} />}
+      {poster && <Poster background={`${URL}${poster}`} />}
     </Wrapper>
   );
 };
