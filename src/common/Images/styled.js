@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import video from "../../icons/video.svg";
 import person from "../../icons/person.svg";
@@ -11,6 +10,7 @@ export const Wrapper = styled.div`
   align-items: center;
   aspect-ratio: 2 / 3;
   border-radius: 5px;
+  transition: opacity 0.15s ease-out;
 
   ${({ movieDetails }) =>
     movieDetails &&
@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
       }
     `}
 
-    ${({ person }) =>
+  ${({ person }) =>
     person &&
     css`
       aspect-ratio: 3 / 4;
@@ -51,6 +51,20 @@ export const Poster = styled.div`
   background-size: cover;
   background-image: ${({ background }) => `url(${background})`};
 
+  ${({ background }) =>
+    background &&
+    css`
+      opacity: 0;
+      animation: reveal 0.75s ease-in-out 0.25s;
+      animation-fill-mode: forwards;
+
+      @keyframes reveal {
+        100% {
+          opacity: 1;
+        }
+      }
+    `}
+
   ${({ noMovie }) =>
     noMovie &&
     css`
@@ -66,14 +80,4 @@ export const Poster = styled.div`
       background-image: url(${person});
       opacity: 0.6;
     `}
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: ${({ theme }) => theme.color.woodsmoke};
-  transition: opacity 0.15s ease-out;
-
-  &:hover {
-    opacity: 0.7;
-  }
 `;

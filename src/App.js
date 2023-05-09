@@ -1,9 +1,10 @@
 import Header from "./common/Header";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
-import { toPeople, toMovie, toMovies } from "./routes";
+import { toPeople, toMovie, toMovies, toPerson } from "./routes";
 import MoviesList from "./features/MoviesList";
 import PeopleList from "./features/PeopleList";
 import MovieDetails from "./features/MovieDetails";
+import PersonDetails from "./features/PersonDetails";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         </Route>
         <Route path={toMovies()}>
           <MoviesList />
+        </Route>
+        <Route path={toPerson()}>
+          <PersonDetails />
         </Route>
         <Route path={toPeople()}>
           <PeopleList />

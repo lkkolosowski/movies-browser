@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MovieDetails = styled.article`
+export const Details = styled.article`
   color: ${({ theme }) => theme.color.black};
   padding: 40px;
   display: grid;
@@ -22,7 +22,7 @@ export const MovieDetails = styled.article`
   }
 `;
 
-export const MovieDetailsDescription = styled.div`
+export const DetailsDescription = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     grid-row: span 2;
   }

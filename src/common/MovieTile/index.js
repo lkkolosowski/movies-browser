@@ -1,11 +1,9 @@
-import { Genres } from "../Genres";
+import { toMovie } from "../../routes";
+import { Genres, GenresPerson } from "../Genres";
 import { MovieImage } from "../Images";
 import { MainInfo } from "../Info";
 import { Rating } from "../Rating";
-import {
-  MovieDescription,
-  Movie,
-} from "./styled";
+import { MovieDescription, Movie, StyledLink } from "./styled";
 
 export const MovieTile = ({
   poster,
@@ -16,16 +14,43 @@ export const MovieTile = ({
   genres,
   id,
 }) => (
-  <Movie>
-    <MovieImage id={id} poster={poster} />
-    <MovieDescription>
-      <div>
-        <MainInfo title={title} year={year} />
-        <Genres genres={genres} />
-      </div>
-      <div>
-        <Rating vote={vote} votes={votes} />
-      </div>
-    </MovieDescription>
-  </Movie>
+  <StyledLink to={toMovie({ id: id })}>
+    <Movie>
+      <MovieImage id={id} poster={poster} />
+      <MovieDescription>
+        <div>
+          <MainInfo title={title} year={year} />
+          <Genres genres={genres} />
+        </div>
+        <div>
+          <Rating vote={vote} votes={votes} />
+        </div>
+      </MovieDescription>
+    </Movie>
+  </StyledLink>
+);
+
+export const MoviePersonTile = ({
+  poster,
+  title,
+  year,
+  vote,
+  votes,
+  genres,
+  id,
+}) => (
+  <StyledLink to={toMovie({ id: id })}>
+    <Movie>
+      <MovieImage id={id} poster={poster} />
+      <MovieDescription>
+        <div>
+          <MainInfo title={title} year={year} />
+          <GenresPerson genres={genres} />
+        </div>
+        <div>
+          <Rating vote={vote} votes={votes} />
+        </div>
+      </MovieDescription>
+    </Movie>
+  </StyledLink>
 );
