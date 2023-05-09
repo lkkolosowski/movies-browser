@@ -35,3 +35,14 @@ export const getMovieDetails = async ({ movieId }) => {
 
   return await response.data;
 };
+
+export const searchMovie = async ({ query }) => {
+  const response = await axios.get(
+    `${URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+  );
+  if (!response.ok) {
+    new Error(response.statusText);
+  }
+
+  return await response.data;
+};
