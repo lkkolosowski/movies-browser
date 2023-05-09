@@ -9,7 +9,7 @@ import {
   selectStatus,
 } from "../movieDetailsSlice";
 import { MainWrapper } from "../../common/MainWrapper";
-import { MovieDetailsTile } from "../../common/MovieDetailsTile";
+import { MovieDetailsTile } from "../../common/DetailsTiles";
 import { Error } from "../../common/Error";
 import { Loader } from "../../common/Loader";
 import { Backdrop } from "./Backdrop";

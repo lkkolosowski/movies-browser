@@ -51,6 +51,20 @@ export const Poster = styled.div`
   background-size: cover;
   background-image: ${({ background }) => `url(${background})`};
 
+  ${({ reveal }) =>
+    reveal &&
+    css`
+      opacity: 0;
+      animation: reveal 0.75s ease-in-out 0.25s;
+      animation-fill-mode: forwards;
+
+      @keyframes reveal {
+        100% {
+          opacity: 1;
+        }
+      }
+    `}
+
   ${({ noMovie }) =>
     noMovie &&
     css`

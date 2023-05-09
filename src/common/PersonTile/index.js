@@ -1,11 +1,9 @@
-import { toPeople } from "../../routes";
+import { toPerson } from "../../routes";
 import { PersonImage } from "../Images";
 import { Name, Person, Role, StyledLink } from "./styled";
 
 export const PersonTile = ({ name, role, poster, id }) => (
-  <StyledLink to={toPeople()}>
-    {" "}
-    {/* this link will lead to a person (toPerson) in the future */}
+  <StyledLink to={toPerson({ id: id })}>
     <Person>
       <PersonImage poster={poster} id={id} />
       <Name>{name}</Name>

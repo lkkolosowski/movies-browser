@@ -5,19 +5,19 @@ export const MovieImage = ({ poster }) => {
 
   return (
     <Wrapper>
-      <Poster noPoster />
-      {poster && <Poster background={`${URL}${poster}`} />}
+      <Poster noMovie />
+      {poster && <Poster reveal background={`${URL}${poster}`} />}
     </Wrapper>
   );
 };
 
-export const MovieDetailsImage = ({ poster }) => {
+export const DetailsImage = ({ poster }) => {
   const URL = "https://image.tmdb.org/t/p/w500";
 
   return (
     <Wrapper movieDetails>
       <Poster noMovie />
-      {poster && <Poster background={`${URL}${poster}`} />}
+      {poster && <Poster reveal background={`${URL}${poster}`} />}
     </Wrapper>
   );
 };
@@ -28,7 +28,7 @@ export const PersonImage = ({ poster }) => {
   return (
     <Wrapper person>
       <Poster noPerson />
-      {poster && <Poster background={`${URL}${poster}`} />}
+      {poster && <Poster reveal background={`${URL}${poster}`} />}
     </Wrapper>
   );
 };
