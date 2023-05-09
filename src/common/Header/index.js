@@ -10,6 +10,7 @@ import {
   Loupe,
 } from "./styled";
 import Navigation from "./Navigation";
+import SearchEngine from "./Search";
 
 const Header = () => (
   <Wrapper>
@@ -23,7 +24,7 @@ const Header = () => (
       </HeaderButtons>
       <Search>
         <Loupe />
-        <Input placeholder="Search for movies..." />
+        <SearchEngine />
       </Search>
     </StyledHeader>
   </Wrapper>
