@@ -9,6 +9,7 @@ export const Details = styled.article`
   background-color: ${({ theme }) => theme.color.white};
   box-shadow: ${({ theme }) => theme.shadow};
   grid-template-rows: auto 1fr;
+  border-radius: 5px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     gap: 0 28px;
