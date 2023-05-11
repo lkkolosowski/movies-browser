@@ -44,28 +44,32 @@ const PersonDetails = () => {
             dateOfBirth={details.birthday}
             placeOfBirth={details.place_of_birth}
           />
-          <Subtitle subtitle={`Cast - ${cast.length}`} />
-          <List>
-            {cast.map(
-              (movie) =>
-                movie.title && (
-                  <Item key={movie.credit_id}>
-                    <MoviePersonTile
-                      id={movie.id}
-                      poster={movie.poster_path}
-                      title={movie.title}
-                      year={movie.release_date}
-                      vote={movie.vote_average}
-                      votes={movie.vote_count}
-                      genres={movie.genre_ids}
-                    />
-                  </Item>
-                )
-            )}
-          </List>
+          {cast.length > 0 && (
+            <>
+              <Subtitle subtitle={`Cast – ${cast.length}`} />
+              <List>
+                {cast.map(
+                  (movie) =>
+                    movie.title && (
+                      <Item key={movie.credit_id}>
+                        <MoviePersonTile
+                          id={movie.id}
+                          poster={movie.poster_path}
+                          title={movie.title}
+                          year={movie.release_date}
+                          vote={movie.vote_average}
+                          votes={movie.vote_count}
+                          genres={movie.genre_ids}
+                        />
+                      </Item>
+                    )
+                )}
+              </List>
+            </>
+          )}
           {crew.length > 0 && (
             <>
-              <Subtitle subtitle={`Crew - ${crew.length}`} />
+              <Subtitle subtitle={`Crew – ${crew.length}`} />
               <List>
                 {crew.map(
                   (movie) =>

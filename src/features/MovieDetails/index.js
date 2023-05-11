@@ -59,33 +59,40 @@ const MovieDetails = () => {
               production={details.production_countries}
               release={details.release_date}
             />
-            <Subtitle subtitle="Cast" />
-            <List>
-              {cast.map((person) => (
-                <Item key={person.credit_id}>
-                  <PersonTile
-                    id={person.id}
-                    name={person.name}
-                    role={person.character}
-                    poster={person.profile_path}
-                  />
-                </Item>
-              ))}
-            </List>
-
-            <Subtitle subtitle="Crew" />
-            <List>
-              {crew.map((person) => (
-                <Item key={person.credit_id}>
-                  <PersonTile
-                    id={person.id}
-                    name={person.name}
-                    role={person.job}
-                    poster={person.profile_path}
-                  />
-                </Item>
-              ))}
-            </List>
+            {cast.length > 0 && (
+              <>
+                <Subtitle subtitle="Cast" />
+                <List>
+                  {cast.map((person) => (
+                    <Item key={person.credit_id}>
+                      <PersonTile
+                        id={person.id}
+                        name={person.name}
+                        role={person.character}
+                        poster={person.profile_path}
+                      />
+                    </Item>
+                  ))}
+                </List>
+              </>
+            )}
+            {crew.length > 0 && (
+              <>
+                <Subtitle subtitle="Crew" />
+                <List>
+                  {crew.map((person) => (
+                    <Item key={person.credit_id}>
+                      <PersonTile
+                        id={person.id}
+                        name={person.name}
+                        role={person.job}
+                        poster={person.profile_path}
+                      />
+                    </Item>
+                  ))}
+                </List>
+              </>
+            )}
           </>
         }
       />

@@ -39,11 +39,11 @@ const MoviesList = () => {
     dispatch(goToPage({ page: 1 }));
   }, [query, dispatch]);
 
-  return status === "loading" ? (
-    <Loader />
-  ) : status === "error" ? (
-    <Error />
-  ) : (
+  return (
+    status === "loading" ?
+    <Loader /> :
+    status === "error" ?
+    <Error /> :
     <>
       {totalResults === 0 ? (
         <NoResults />
