@@ -16,6 +16,8 @@ export const Pagination = ({ pageNumber, totalPages }) => {
   const dispatch = useDispatch();
   const replaceQueryParameter = useReplaceQueryParameter();
 
+  const page = parseInt(pageNumber);
+
   const setPage = (currentPage) => {
     replaceQueryParameter([
       {
@@ -28,33 +30,33 @@ export const Pagination = ({ pageNumber, totalPages }) => {
 
   return (
     <StyledPagination>
-      <Button disabled={pageNumber === 1} onClick={() => setPage(1)}>
+      <Button disabled={page === 1} onClick={() => setPage(1)}>
         <StyledVector />
         <StyledVector mobile="true" />
         <ButtonText>First</ButtonText>
       </Button>
       <Button
-        disabled={pageNumber === 1}
-        onClick={() => setPage(+pageNumber - 1)}
+        disabled={page === 1}
+        onClick={() => setPage(page - 1)}
       >
         <StyledVector />
         <ButtonText>Previous</ButtonText>
       </Button>
       <Wrapper>
         <Text>Page</Text>
-        <PageText>{pageNumber}</PageText>
+        <PageText>{page}</PageText>
         <Text>of</Text>
         <PageText>{totalPages}</PageText>
       </Wrapper>
       <Button
-        disabled={pageNumber === totalPages}
-        onClick={() => setPage(+pageNumber + 1)}
+        disabled={page === totalPages}
+        onClick={() => setPage(page + 1)}
       >
         <ButtonText>Next</ButtonText>
         <StyledVector right="true" />
       </Button>
       <Button
-        disabled={pageNumber === totalPages}
+        disabled={page === totalPages}
         onClick={() => setPage(totalPages)}
       >
         <ButtonText>Last</ButtonText>
