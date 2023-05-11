@@ -20,7 +20,7 @@ export const useReplaceQueryParameter = () => {
                 searchParams.set(key, value);
             }
         }
-        history.push(`${location.pathname.slice(0, 7)}?${searchParams.toString()}`);
+        history.push(`${location.pathname}?${searchParams.toString()}`);
     };
 
     return replaceQueryParameter;
