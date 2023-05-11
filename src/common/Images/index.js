@@ -32,3 +32,14 @@ export const PersonImage = ({ poster }) => {
     </Wrapper>
   );
 };
+
+export const PersonListImage = ({ poster }) => {
+  const URL = "https://image.tmdb.org/t/p/h632";
+
+  return (
+    <Wrapper person>
+      <Poster noPerson />
+      {poster && <Poster background={`${URL}${poster}`} />}
+    </Wrapper>
+  );
+};
