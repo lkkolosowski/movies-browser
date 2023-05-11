@@ -24,17 +24,16 @@ import {
 import { useEffect } from "react";
 
 const PeopleList = () => {
-  const popularPeople = useSelector(selectPeople);
-  const status = useSelector(selectStatus);
+  const dispatch = useDispatch();
 
+  const status = useSelector(selectStatus);
+  const popularPeople = useSelector(selectPeople);
   const pageNumber = useSelector(selectPage);
   const totalPages = useSelector(selectTotalPages);
+  const totalResults = useSelector(selectTotalResults);
 
   const query = useQueryParameter(searchQueryParamName);
   const page = useQueryParameter(pageQueryParamName);
-  const totalResults = useSelector(selectTotalResults);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setQuery(query
