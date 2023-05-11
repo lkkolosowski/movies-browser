@@ -16,7 +16,7 @@ export const PersonListTile = ({ name, poster, id }) => (
   <StyledLink to={toPerson({ id: id })}>
     <Person>
       <PersonListImage poster={poster} id={id} />
-      <Name list>{name}</Name>
+      <Name list="true">{name}</Name>
     </Person>
   </StyledLink>
 );
