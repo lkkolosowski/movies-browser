@@ -3,7 +3,7 @@ import axios from "axios";
 const URL = "https://api.themoviedb.org/3";
 const API_KEY = "1a89c6b78383e65e62937e5f4ffe7915";
 
-export const getPopularMovies = async (page) => {
+export const getPopularMovies = async ({ page }) => {
   const response = await axios.get(
     `${URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
   );
