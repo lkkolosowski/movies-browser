@@ -22,7 +22,7 @@ function* fetchMoviesListHandler() {
     const query = yield select(selectQuery);
     let data;
     if (query !== "") {
-      data = yield call(searchMovie, { query: query });
+      data = yield call(searchMovie, { page:page, query: query });
     } else {
       data = yield call(getPopularMovies, page);
     }
