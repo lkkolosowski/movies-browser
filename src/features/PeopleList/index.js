@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   goToPage,
@@ -21,7 +22,6 @@ import {
   pageQueryParamName,
   searchQueryParamName,
 } from "../queryParametersName";
-import { useEffect } from "react";
 
 const PeopleList = () => {
   const dispatch = useDispatch();
