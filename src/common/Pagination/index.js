@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useReplaceQueryParameter } from "../../features/queryParameters";
+import { pageQueryParamName } from "../../features/queryParametersName";
 import {
   StyledPagination,
   Wrapper,
@@ -8,44 +9,45 @@ import {
   Text,
   PageText,
 } from "./styled";
-import { usePages } from "./usePages";
 
 export const Pagination = ({ pageNumber, totalPages }) => {
-  const [page, setPage] = useState("");
-  usePages(page);
+  const replaceQueryParameter = useReplaceQueryParameter();
 
-  const currentPage = parseInt(pageNumber);
+  const page = parseInt(pageNumber);
+
+  const toPage = (currentPage) => {
+    replaceQueryParameter([
+      {
+        key: pageQueryParamName,
+        value: currentPage,
+      },
+    ]);
+  };
 
   return (
     <StyledPagination>
-      <Button disabled={currentPage === 1} onClick={() => setPage(1)}>
+      <Button disabled={page === 1} onClick={() => toPage(1)}>
         <StyledVector />
         <StyledVector mobile="true" />
         <ButtonText>First</ButtonText>
       </Button>
-      <Button
-        disabled={currentPage === 1}
-        onClick={() => setPage(currentPage - 1)}
-      >
+      <Button disabled={page === 1} onClick={() => toPage(page - 1)}>
         <StyledVector />
         <ButtonText>Previous</ButtonText>
       </Button>
       <Wrapper>
         <Text>Page</Text>
-        <PageText>{currentPage}</PageText>
+        <PageText>{page}</PageText>
         <Text>of</Text>
         <PageText>{totalPages}</PageText>
       </Wrapper>
-      <Button
-        disabled={currentPage === totalPages}
-        onClick={() => setPage(currentPage + 1)}
-      >
+      <Button disabled={page === totalPages} onClick={() => toPage(page + 1)}>
         <ButtonText>Next</ButtonText>
         <StyledVector right="true" />
       </Button>
       <Button
-        disabled={currentPage === totalPages}
-        onClick={() => setPage(totalPages)}
+        disabled={page === totalPages}
+        onClick={() => toPage(totalPages)}
       >
         <ButtonText>Last</ButtonText>
         <StyledVector right="true" />
