@@ -17,7 +17,10 @@ import { NoResults } from "../../common/NoResults";
 import { Title } from "../../common/Title";
 import { List, Item } from "./styled";
 import { useQueryParameter } from "../queryParameters";
-import { searchQueryParamName } from "../queryParametersName";
+import {
+  pageQueryParamName,
+  searchQueryParamName,
+} from "../queryParametersName";
 import { useEffect } from "react";
 
 const MoviesList = () => {
@@ -28,16 +31,19 @@ const MoviesList = () => {
   const totalPages = useSelector(selectTotalPages);
 
   const query = useQueryParameter(searchQueryParamName);
+  const page = useQueryParameter(pageQueryParamName);
   const totalResults = useSelector(selectTotalResults);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    query
-      ? dispatch(setQuery({ query: query }))
-      : dispatch(setQuery({ query: "" }));
-    dispatch(goToPage({ page: 1 }));
-  }, [query, dispatch]);
+    dispatch(setQuery(query
+      ? { query: query }
+      : { query: "" }));
+    dispatch(goToPage(page
+      ? { page: page }
+      : { page: 1 }));
+  }, [query, page, dispatch]);
 
   return (
     status === "loading" ?
@@ -45,9 +51,8 @@ const MoviesList = () => {
     status === "error" ?
     <Error /> :
     <>
-      {totalResults === 0 ? (
-        <NoResults />
-      ) : (
+      {totalResults === 0 ?
+        <NoResults /> :
         <MainWrapper
           content={
             <>
@@ -73,22 +78,11 @@ const MoviesList = () => {
                   </Item>
                 ))}
               </List>
-              <Pagination
-                toNextPage={() =>
-                  dispatch(goToPage({ page: pageNumber + 1 }))
-                }
-                toPrevPage={() =>
-                  dispatch(goToPage({ page: pageNumber - 1 }))
-                }
-                pageNumber={pageNumber}
-                totalPages={totalPages}
-                toFirstPage={() => dispatch(goToPage({ page: 1 }))}
-                toLastPage={() => dispatch(goToPage({ page: totalPages }))}
-              />
+              <Pagination pageNumber={pageNumber} totalPages={totalPages} />
             </>
           }
         />
-      )}
+      }
     </>
   );
 };
