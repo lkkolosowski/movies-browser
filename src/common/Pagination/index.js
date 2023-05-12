@@ -1,6 +1,4 @@
-import { useDispatch } from "react-redux";
-import { useReplaceQueryParameter } from "../../features/queryParameters";
-import { pageQueryParamName } from "../../features/queryParametersName";
+import { useState } from "react";
 import {
   StyledPagination,
   Wrapper,
@@ -10,53 +8,43 @@ import {
   Text,
   PageText,
 } from "./styled";
-import { goToPage } from "../../features/moviesListSlice";
+import { usePages } from "./usePages";
 
 export const Pagination = ({ pageNumber, totalPages }) => {
-  const dispatch = useDispatch();
-  const replaceQueryParameter = useReplaceQueryParameter();
+  const [page, setPage] = useState("");
+  usePages(page);
 
-  const page = parseInt(pageNumber);
-
-  const setPage = (currentPage) => {
-    replaceQueryParameter([
-      {
-        key: pageQueryParamName,
-        value: currentPage,
-      },
-    ]);
-    dispatch(goToPage(currentPage));
-  };
+  const currentPage = parseInt(pageNumber);
 
   return (
     <StyledPagination>
-      <Button disabled={page === 1} onClick={() => setPage(1)}>
+      <Button disabled={currentPage === 1} onClick={() => setPage(1)}>
         <StyledVector />
         <StyledVector mobile="true" />
         <ButtonText>First</ButtonText>
       </Button>
       <Button
-        disabled={page === 1}
-        onClick={() => setPage(page - 1)}
+        disabled={currentPage === 1}
+        onClick={() => setPage(currentPage - 1)}
       >
         <StyledVector />
         <ButtonText>Previous</ButtonText>
       </Button>
       <Wrapper>
         <Text>Page</Text>
-        <PageText>{page}</PageText>
+        <PageText>{currentPage}</PageText>
         <Text>of</Text>
         <PageText>{totalPages}</PageText>
       </Wrapper>
       <Button
-        disabled={page === totalPages}
-        onClick={() => setPage(page + 1)}
+        disabled={currentPage === totalPages}
+        onClick={() => setPage(currentPage + 1)}
       >
         <ButtonText>Next</ButtonText>
         <StyledVector right="true" />
       </Button>
       <Button
-        disabled={page === totalPages}
+        disabled={currentPage === totalPages}
         onClick={() => setPage(totalPages)}
       >
         <ButtonText>Last</ButtonText>
