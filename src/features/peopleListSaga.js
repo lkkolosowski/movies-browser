@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { call, put, debounce, select } from "redux-saga/effects";
 import {
   fetchDataSuccess,
   fetchDataError,
@@ -25,5 +25,5 @@ function* fetchPopularPeopleHandler() {
 }
 
 export function* watchFetchPeopleList() {
-  yield takeLatest(goToPage.type, fetchPopularPeopleHandler);
+  yield debounce(1000, goToPage.type, fetchPopularPeopleHandler);
 }
