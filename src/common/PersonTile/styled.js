@@ -26,6 +26,7 @@ export const Name = styled.p`
   -webkit-line-clamp: 1;
   overflow: hidden;
   max-height: 1.3em;
+  word-break: break-all;
 
   ${({ list }) =>
     list &&
@@ -52,6 +53,7 @@ export const Role = styled.span`
   -webkit-line-clamp: 1;
   overflow: hidden;
   max-height: 1.5em;
+  word-break: break-all;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     font-size: 13px;
