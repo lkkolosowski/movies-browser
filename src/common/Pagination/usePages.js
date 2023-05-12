@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { goToPage } from "../../features/moviesListSlice";
 import { useReplaceQueryParameter } from "../../features/queryParameters";
@@ -7,15 +8,17 @@ export const usePages = (page) => {
   const dispatch = useDispatch();
   const replaceQueryParameter = useReplaceQueryParameter();
 
-  if (page === "") {
-    return;
-  }
+  useEffect(() => {
+    if (page === "") {
+      return;
+    }
 
-  replaceQueryParameter([
-    {
-      key: pageQueryParamName,
-      value: page,
-    },
-  ]);
-  dispatch(goToPage(page));
+    replaceQueryParameter([
+      {
+        key: pageQueryParamName,
+        value: page,
+      },
+    ]);
+    dispatch(goToPage(page));
+  }, [dispatch, page, replaceQueryParameter]);
 };
