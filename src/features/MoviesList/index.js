@@ -51,7 +51,7 @@ const MoviesList = () => {
     status === "error" ?
     <Error /> :
     <>
-      {popularMovies.length === 0 ?
+      {pageNumber > totalPages ?
       <Error /> : totalResults === 0 ?
       <NoResults /> :
       <MainWrapper

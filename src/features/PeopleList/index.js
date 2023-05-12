@@ -50,7 +50,7 @@ const PeopleList = () => {
     status === "error" ?
     <Error /> :
     <>
-      {popularPeople.length === 0 ?
+      {pageNumber > totalPages ?
       <Error /> : totalResults === 0 ?
       <NoResults /> :
       <MainWrapper
