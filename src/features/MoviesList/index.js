@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   goToPage,
@@ -21,20 +22,18 @@ import {
   pageQueryParamName,
   searchQueryParamName,
 } from "../queryParametersName";
-import { useEffect } from "react";
 
 const MoviesList = () => {
-  const popularMovies = useSelector(selectMoviesList);
+  const dispatch = useDispatch();
+  
   const status = useSelector(selectStatus);
-
+  const popularMovies = useSelector(selectMoviesList);
   const pageNumber = useSelector(selectPage);
   const totalPages = useSelector(selectTotalPages);
+  const totalResults = useSelector(selectTotalResults);
 
   const query = useQueryParameter(searchQueryParamName);
   const page = useQueryParameter(pageQueryParamName);
-  const totalResults = useSelector(selectTotalResults);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setQuery(query
