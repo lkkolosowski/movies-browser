@@ -50,33 +50,34 @@ const PeopleList = () => {
     status === "error" ?
     <Error /> :
     <>
-      {totalResults === 0 ?
-        <NoResults /> :
-        <MainWrapper
-          content={
-            <>
-              <Title
-                title={
-                  query
-                    ? `Search results for "${query}" (${totalResults})`
-                    : `Popular People`
-                }
-              ></Title>
-              <List>
-                {popularPeople.map((person) => (
-                  <Item key={person.id}>
-                    <PersonListTile
-                      id={person.id}
-                      poster={person.profile_path}
-                      name={person.name}
-                    />
-                  </Item>
-                ))}
-              </List>
-              <Pagination pageNumber={pageNumber} totalPages={totalPages} />
-            </>
-          }
-        />
+      {popularPeople.length === 0 ?
+      <Error /> : totalResults === 0 ?
+      <NoResults /> :
+      <MainWrapper
+        content={
+          <>
+            <Title
+              title={
+                query
+                  ? `Search results for "${query}" (${totalResults})`
+                  : `Popular People`
+              }
+            ></Title>
+            <List>
+              {popularPeople.map((person) => (
+                <Item key={person.id}>
+                  <PersonListTile
+                    id={person.id}
+                    poster={person.profile_path}
+                    name={person.name}
+                  />
+                </Item>
+              ))}
+            </List>
+            <Pagination pageNumber={pageNumber} totalPages={totalPages} />
+          </>
+        }
+      />
       }
     </>
   );

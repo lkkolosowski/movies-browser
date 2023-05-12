@@ -51,37 +51,38 @@ const MoviesList = () => {
     status === "error" ?
     <Error /> :
     <>
-      {totalResults === 0 ?
-        <NoResults /> :
-        <MainWrapper
-          content={
-            <>
-              <Title
-                title={
-                  query
-                    ? `Search results for "${query}" (${totalResults})`
-                    : `Popular Movies`
-                }
-              ></Title>
-              <List>
-                {popularMovies.map((movie) => (
-                  <Item key={movie.id}>
-                    <MovieTile
-                      id={movie.id}
-                      poster={movie.poster_path}
-                      title={movie.title}
-                      year={movie.release_date}
-                      vote={movie.vote_average}
-                      votes={movie.vote_count}
-                      genres={movie.genre_ids}
-                    />
-                  </Item>
-                ))}
-              </List>
-              <Pagination pageNumber={pageNumber} totalPages={totalPages} />
-            </>
-          }
-        />
+      {popularMovies.length === 0 ?
+      <Error /> : totalResults === 0 ?
+      <NoResults /> :
+      <MainWrapper
+        content={
+          <>
+            <Title
+              title={
+                query
+                  ? `Search results for "${query}" (${totalResults})`
+                  : `Popular Movies`
+              }
+            ></Title>
+            <List>
+              {popularMovies.map((movie) => (
+                <Item key={movie.id}>
+                  <MovieTile
+                    id={movie.id}
+                    poster={movie.poster_path}
+                    title={movie.title}
+                    year={movie.release_date}
+                    vote={movie.vote_average}
+                    votes={movie.vote_count}
+                    genres={movie.genre_ids}
+                  />
+                </Item>
+              ))}
+            </List>
+            <Pagination pageNumber={pageNumber} totalPages={totalPages} />
+          </>
+        }
+      />
       }
     </>
   );
