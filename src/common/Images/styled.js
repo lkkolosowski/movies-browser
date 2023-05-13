@@ -41,7 +41,14 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Poster = styled.div`
+export const Poster = styled.div.attrs(
+  ({ background }) =>
+    background && {
+      style: {
+        backgroundImage: `url(${background})`,
+      },
+    }
+)`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -49,7 +56,6 @@ export const Poster = styled.div`
   background-repeat: no-repeat;
   border-radius: 5px;
   background-size: cover;
-  background-image: ${({ background }) => `url(${background})`};
 
   ${({ background }) =>
     background &&

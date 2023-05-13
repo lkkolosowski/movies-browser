@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Person = styled.article`
   padding: 16px;
@@ -26,6 +26,14 @@ export const Name = styled.p`
   -webkit-line-clamp: 1;
   overflow: hidden;
   max-height: 1.3em;
+  word-break: break-all;
+
+  ${({ list }) =>
+    list &&
+    css`
+      -webkit-line-clamp: 2;
+      max-height: 2.6em;
+    `}
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     font-size: 14px;
@@ -45,6 +53,7 @@ export const Role = styled.span`
   -webkit-line-clamp: 1;
   overflow: hidden;
   max-height: 1.5em;
+  word-break: break-all;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     font-size: 13px;
