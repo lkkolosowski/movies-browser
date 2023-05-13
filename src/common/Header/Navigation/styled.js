@@ -17,6 +17,8 @@ export const Item = styled.li`
   font-size: 14px;
   line-height: 1.5;
   --margin: 24px;
+  width: 102px;
+  text-align: center;
 
   &:after {
     display: block;
@@ -36,6 +38,7 @@ export const Item = styled.li`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     font-size: 12px;
+    width: 70px;
   }
 `;
 
