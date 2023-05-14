@@ -1,11 +1,13 @@
 ## Movies Browser - Group project  🎬 
 
+![title image](https://github.com/lkkolosowski/movies-browser/blob/main/public/og-image.png)
 ## Table of content
 
 - [Movies Browser - Group project  🎬](#movies-browser---group-project--)
 - [Table of content](#table-of-content)
 - [Demo!!](#demo)
 - [General Information](#general-information)
+- [Preview](#preview)
 - [Authors](#authors)
 - [Technologies:](#technologies)
 - [Available Scripts](#available-scripts)
