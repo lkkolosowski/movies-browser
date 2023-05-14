@@ -20,9 +20,9 @@ Movies Browser is an application that allows you to search for movies as well as
 It was based on a graphic design in Figma. Data about videos and people are fetched from an external API [**The Movie Database**](https://www.themoviedb.org/).
 The Movie Browser application is the final project of the **Frontend Developer course in YouCode.**
 
-##Preview
+## Preview
 
-[preview gif](link)
+![preview gif](preview.gif)
 ## Authors
 
 - 👩‍💻 [Łukasz Kołosowski](https://github.com/lkkolosowski)
