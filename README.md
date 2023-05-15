@@ -1,6 +1,6 @@
 ## Movies Browser - Group project  🎬 
 
-![title image](https://github.com/lkkolosowski/movies-browser/blob/main/public/og-image.png)
+![title image](https://github.com/lkkolosowski/movies-browser/blob/main/public/og-image.png?raw=true)
 
 ## [Demo!!](https://lkkolosowski.github.io/movies-browser/)
 
