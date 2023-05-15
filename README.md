@@ -19,8 +19,7 @@ It was based on a graphic design in Figma. Data about videos and people are fetc
 The Movie Browser application is the final project of the **Frontend Developer course in YouCode.**
 
 ## Preview
-
-<img src="https://github.com/lkkolosowski/movies-browser/blob/readme/preview.gif" width="1328"/>
+<image src="./preview.gif" width="1328">
 
 
 ## Authors
