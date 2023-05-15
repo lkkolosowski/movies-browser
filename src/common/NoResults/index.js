@@ -12,7 +12,7 @@ export const NoResults = () => {
       content={
         <Wrapper>
           <Title>
-            Sorry, there are no results for "{query}"
+            Sorry, there are no results for “{query}”
           </Title>
           <StyledIcon />
         </Wrapper>

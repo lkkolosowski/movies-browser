@@ -4,7 +4,6 @@ import { ReactComponent as NoResultsIcon } from "./noResultsIcon.svg"
 export const Wrapper = styled.div`
   margin: 0 auto 0 auto;
   text-align: center;
-  height: 100vh;
   display: flex;
   flex-direction: column;
 
@@ -67,6 +66,6 @@ export const Title = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     font-size: 18px;
-    margin: 0 0 50px;
+    margin: 0 0;
   }
 `;
