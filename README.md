@@ -1,11 +1,13 @@
 ## Movies Browser - Group project  🎬 
 
 ![title image](https://github.com/lkkolosowski/movies-browser/blob/main/public/og-image.png)
-## Table of content
 
+## [Demo!!](https://lkkolosowski.github.io/movies-browser/)
+
+## Table of content
 - [Movies Browser - Group project  🎬](#movies-browser---group-project--)
-- [Table of content](#table-of-content)
 - [Demo!!](#demo)
+- [Table of content](#table-of-content)
 - [General Information](#general-information)
 - [Preview](#preview)
 - [Authors](#authors)
@@ -14,8 +16,6 @@
   - [`npm start`](#npm-start)
   - [`npm run build`](#npm-run-build)
   - [`npm run eject`](#npm-run-eject)
-
-## [Demo!!](https://lkkolosowski.github.io/movies-browser/)
 
 ## General Information
 Movies Browser is an application that allows you to search for movies as well as people from the movie industry. 
