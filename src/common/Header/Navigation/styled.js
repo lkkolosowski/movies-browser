@@ -29,7 +29,7 @@ export const Item = styled.li`
     width: calc(100% - (var(--margin) * 2));
     margin: 0 var(--margin);
     transform: rotateY(90deg);
-    transition: transform 0.4s;
+    transition: transform 0.15s;
   }
 
   &:hover:after {
