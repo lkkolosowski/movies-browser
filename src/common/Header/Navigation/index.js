@@ -4,7 +4,7 @@ import { StyledNavigation, Item, StyledNavLink } from "./styled";
 const Navigation = () => (
   <StyledNavigation>
     <Item>
-      <StyledNavLink to={toMovies()}>MOVIES</StyledNavLink>
+      <StyledNavLink movie="true" to={toMovies()}>MOVIES</StyledNavLink>
     </Item>
     <Item>
       <StyledNavLink to={toPeople()}>PEOPLE</StyledNavLink>
