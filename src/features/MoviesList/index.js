@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   goToPage,
@@ -21,20 +22,18 @@ import {
   pageQueryParamName,
   searchQueryParamName,
 } from "../queryParametersName";
-import { useEffect } from "react";
 
 const MoviesList = () => {
-  const popularMovies = useSelector(selectMoviesList);
+  const dispatch = useDispatch();
+  
   const status = useSelector(selectStatus);
-
+  const popularMovies = useSelector(selectMoviesList);
   const pageNumber = useSelector(selectPage);
   const totalPages = useSelector(selectTotalPages);
+  const totalResults = useSelector(selectTotalResults);
 
   const query = useQueryParameter(searchQueryParamName);
   const page = useQueryParameter(pageQueryParamName);
-  const totalResults = useSelector(selectTotalResults);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setQuery(query
@@ -51,37 +50,38 @@ const MoviesList = () => {
     status === "error" ?
     <Error /> :
     <>
-      {totalResults === 0 ?
-        <NoResults /> :
-        <MainWrapper
-          content={
-            <>
-              <Title
-                title={
-                  query
-                    ? `Search results for "${query}" (${totalResults})`
-                    : `Popular Movies`
-                }
-              ></Title>
-              <List>
-                {popularMovies.map((movie) => (
-                  <Item key={movie.id}>
-                    <MovieTile
-                      id={movie.id}
-                      poster={movie.poster_path}
-                      title={movie.title}
-                      year={movie.release_date}
-                      vote={movie.vote_average}
-                      votes={movie.vote_count}
-                      genres={movie.genre_ids}
-                    />
-                  </Item>
-                ))}
-              </List>
-              <Pagination pageNumber={pageNumber} totalPages={totalPages} />
-            </>
-          }
-        />
+      {pageNumber > totalPages ?
+      <Error /> : totalResults === 0 ?
+      <NoResults /> :
+      <MainWrapper
+        content={
+          <>
+            <Title
+              title={
+                query
+                  ? `Search results for “${query}” (${totalResults})`
+                  : `Popular Movies`
+              }
+            ></Title>
+            <List>
+              {popularMovies.map((movie) => (
+                <Item key={movie.id}>
+                  <MovieTile
+                    id={movie.id}
+                    poster={movie.poster_path}
+                    title={movie.title}
+                    year={movie.release_date}
+                    vote={movie.vote_average}
+                    votes={movie.vote_count}
+                    genres={movie.genre_ids}
+                  />
+                </Item>
+              ))}
+            </List>
+            <Pagination pageNumber={pageNumber} totalPages={totalPages} />
+          </>
+        }
+      />
       }
     </>
   );

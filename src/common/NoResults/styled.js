@@ -2,16 +2,18 @@ import styled from "styled-components";
 import { ReactComponent as NoResultsIcon } from "./noResultsIcon.svg"
 
 export const Wrapper = styled.div`
-  margin: 150px auto 0 auto;
+  margin: 0 auto 0 auto;
   text-align: center;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     margin-top: 0px;
   }
 `;
 
-export const StyledIcon = styled(NoResultsIcon)` 
+export const StyledIcon = styled(NoResultsIcon)`
+  margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     transform: scale(0.5);
@@ -51,4 +53,19 @@ export const StyledIcon = styled(NoResultsIcon)`
       }
     }
   } 
+`;
+
+export const Title = styled.div`
+  display: flex;
+  justify-content: left;
+  margin: 0 0 150px;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: ${({ theme }) => theme.color.woodsmoke};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 18px;
+    margin: 0 0;
+  }
 `;

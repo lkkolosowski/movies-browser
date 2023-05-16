@@ -14,6 +14,17 @@ export const getPopularMovies = async ({ page }) => {
   return await response.data;
 };
 
+export const getPopularPeople = async ({ page }) => {
+  const response = await axios.get(
+    `${URL}/person/popular?api_key=${API_KEY}&language=en-US&page=${page}`
+  );
+  if (!response.ok) {
+    new Error(response.statusText);
+  }
+
+  return await response.data;
+};
+
 export const getGenres = async () => {
   const response = await axios.get(
     `${URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`
@@ -71,6 +82,17 @@ export const getPersonMovieCredits = async ({ personId }) => {
 export const searchMovie = async ({ query, page }) => {
   const response = await axios.get(
     `${URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}&include_adult=false`
+  );
+  if (!response.ok) {
+    new Error(response.statusText);
+  }
+
+  return await response.data;
+};
+
+export const searchPerson = async ({ page, query }) => {
+  const response = await axios.get(
+    `${URL}/search/person?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}&include_adult=false`
   );
   if (!response.ok) {
     new Error(response.statusText);

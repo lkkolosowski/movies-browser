@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
 
 export const ErrorIcon = styled(Error)`
   width: 100px;
-  transition: 0.3s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 80px;

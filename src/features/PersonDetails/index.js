@@ -46,7 +46,7 @@ const PersonDetails = () => {
           />
           {cast.length > 0 && (
             <>
-              <Subtitle subtitle={`Cast – ${cast.length}`} />
+              <Subtitle subtitle={`Movies – cast (${cast.filter(movie => movie.title).length})`} />
               <List>
                 {cast.map(
                   (movie) =>
@@ -69,7 +69,7 @@ const PersonDetails = () => {
           )}
           {crew.length > 0 && (
             <>
-              <Subtitle subtitle={`Crew – ${crew.length}`} />
+              <Subtitle subtitle={`Movies – crew (${crew.filter(movie => movie.title).length})`} />
               <List>
                 {crew.map(
                   (movie) =>

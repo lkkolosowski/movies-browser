@@ -1,6 +1,4 @@
-//import { useState } from "react";
 import { useLocation } from "react-router-dom";
-//import { toMovie, toPeople } from "../../../routes";
 import { Input } from "../styled";
 import {
   useQueryParameter,
