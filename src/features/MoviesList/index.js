@@ -59,7 +59,7 @@ const MoviesList = () => {
             <Title
               title={
                 query
-                  ? `Search results for "${query}" (${totalResults})`
+                  ? `Search results for “${query}” (${totalResults})`
                   : `Popular Movies`
               }
             ></Title>

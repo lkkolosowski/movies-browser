@@ -59,7 +59,7 @@ const PeopleList = () => {
             <Title
               title={
                 query
-                  ? `Search results for "${query}" (${totalResults})`
+                  ? `Search results for “${query}” (${totalResults})`
                   : `Popular People`
               }
             ></Title>
