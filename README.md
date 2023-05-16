@@ -1,28 +1,27 @@
 ## Movies Browser - Group project  🎬 
 
-## Table of content
-
-- [Movies Browser - Group project  🎬](#movies-browser---group-project--)
-- [Table of content](#table-of-content)
-- [Demo!!](#demo)
-- [General Information](#general-information)
-- [Authors](#authors)
-- [Technologies:](#technologies)
-- [Available Scripts](#available-scripts)
-  - [`npm start`](#npm-start)
-  - [`npm run build`](#npm-run-build)
-  - [`npm run eject`](#npm-run-eject)
+![title image](https://github.com/lkkolosowski/movies-browser/blob/main/public/og-image.png?raw=true)
 
 ## [Demo!!](https://lkkolosowski.github.io/movies-browser/)
 
+## Table of content
+
+- [General Information](#general-information)
+- [Preview](#preview)
+- [Authors](#authors)
+- [Technologies:](#technologies)
+- [Available Scripts](#available-scripts)
+
 ## General Information
+
 Movies Browser is an application that allows you to search for movies as well as people from the movie industry. 
 It was based on a graphic design in Figma. Data about videos and people are fetched from an external API [**The Movie Database**](https://www.themoviedb.org/).
 The Movie Browser application is the final project of the **Frontend Developer course in YouCode.**
 
 ## Preview
+<image src="./preview.gif" width="1328">
 
-![preview gif](preview.gif)
+
 ## Authors
 
 - 👩‍💻 [Łukasz Kołosowski](https://github.com/lkkolosowski)
@@ -30,6 +29,7 @@ The Movie Browser application is the final project of the **Frontend Developer c
 - 👩‍💻 [Albrecht Barton](https://github.com/Albrecht-Albi)
 
 ## Technologies:
+
 [![Our Skills](https://skillicons.dev/icons?i=js,html,css,react,redux,styledcomponents,vscode,figma,git,github)](https://skillicons.dev)
 
 ## Available Scripts
