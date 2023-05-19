@@ -3,7 +3,7 @@
   "name": "Movies Browser in React",
   "icons": [
     {
-      "src": "logo128.png",
+      "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
