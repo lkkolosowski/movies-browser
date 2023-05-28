@@ -14,10 +14,14 @@ import {
   reverseString,
 } from "./utils";
 
-export const MainInfo = ({ title, year }) => (
+export const MainInfo = ({ title, year, character }) => (
   <div>
     <Title>{title}</Title>
-    {year && <Subtitle>{extractFirstWord(year)}</Subtitle>}
+    {year && (
+      <Subtitle>
+        {character} ({extractFirstWord(year)})
+      </Subtitle>
+    )}
   </div>
 );
 

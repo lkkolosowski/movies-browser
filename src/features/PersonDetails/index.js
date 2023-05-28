@@ -60,6 +60,7 @@ const PersonDetails = () => {
                           vote={movie.vote_average}
                           votes={movie.vote_count}
                           genres={movie.genre_ids}
+                          character={movie.character}
                         />
                       </Item>
                     )
