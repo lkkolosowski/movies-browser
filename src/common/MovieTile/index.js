@@ -5,15 +5,7 @@ import { MainInfo } from "../Info";
 import { Rating } from "../Rating";
 import { MovieDescription, Movie, StyledLink } from "./styled";
 
-export const MovieTile = ({
-  poster,
-  title,
-  year,
-  vote,
-  votes,
-  genres,
-  id,
-}) => (
+export const MovieTile = ({ poster, title, year, vote, votes, genres, id }) => (
   <StyledLink to={toMovie({ id: id })}>
     <Movie>
       <MovieImage id={id} poster={poster} />
@@ -38,13 +30,14 @@ export const MoviePersonTile = ({
   votes,
   genres,
   id,
+  character,
 }) => (
   <StyledLink to={toMovie({ id: id })}>
     <Movie>
       <MovieImage id={id} poster={poster} />
       <MovieDescription>
         <div>
-          <MainInfo title={title} year={year} />
+          <MainInfo title={title} year={year} character={character} />
           <GenresPerson genres={genres} />
         </div>
         <div>
