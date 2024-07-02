@@ -15,7 +15,9 @@ export const Rating = ({ vote, votes }) => (
   <Wrapper>
     <Star />
     <Vote>{toDecimal(vote)}</Vote>
-    <Votes>{votes} votes</Votes>
+    <Votes>
+      {votes} {votes === 1 ? "vote" : "votes"}
+    </Votes>
   </Wrapper>
 );
 
@@ -24,7 +26,9 @@ export const BackdropRating = ({ vote, votes }) => (
     <Star backdrop="true" />
     <Average backdrop>{toDecimal(vote)}</Average>
     <Total backdrop>/ 10</Total>
-    <Count backdrop>{votes} votes</Count>
+    <Count backdrop>
+      {votes} {votes === 1 ? "vote" : "votes"}
+    </Count>
   </BackdropRatingWrapper>
 );
 
@@ -35,7 +39,9 @@ export const DetailsRating = ({ vote, votes }) => (
         <Star />
         <Average>{toDecimal(vote)}</Average>
         <Total>/ 10</Total>
-        <Count>{votes} votes</Count>
+        <Count>
+          {votes} {votes === 1 ? "vote" : "votes"}
+        </Count>
       </>
     ) : (
       <>No votes yet</>
